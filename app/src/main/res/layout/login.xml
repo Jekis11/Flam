@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eef2f3"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/eins" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:letterSpacing="0.03"
+        android:text="Login"
+        android:textColor="@color/Grau"
+        android:textSize="35dp" />
+
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/forget"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/bold"
+        android:paddingLeft="10dp"
+        android:text="Email"
+        android:textColor="@color/Orang" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/forget"
+        android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/bold"
+        android:paddingLeft="10dp"
+        android:text="Password"
+        android:textColor="@color/Orang" />
+
+
+    <TextView
+        android:id="@+id/forgetpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/din"
+        android:text="Forget Password ?"
+        android:textColor="@color/Grau"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonlogin"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/bold"
+        android:text="Login"
+        android:textColor="#fff"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/donthaveaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/din"
+        android:gravity="center"
+        android:text="Don't have an account ? Sign Up"
+        android:textColor="@color/Grau"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonloginandere"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/bold"
+        android:text="Other login Methods"
+        android:textColor="#fff"
+        android:textSize="18dp" />
+
+
+</LinearLayout>

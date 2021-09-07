@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eef2f3"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/eins" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:letterSpacing="0.03"
+        android:text="Register"
+        android:textColor="@color/Grau"
+        android:textSize="35dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/forget"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/bold"
+        android:paddingLeft="10dp"
+        android:text="Name"
+        android:textColor="@color/Orang" />
+
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/forget"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/bold"
+        android:paddingLeft="10dp"
+        android:text="Email"
+        android:textColor="@color/Orang" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/forget"
+        android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/bold"
+        android:paddingLeft="10dp"
+        android:text="Password"
+        android:textColor="@color/Orang" />
+
+
+
+
+
+    <Button
+        android:id="@+id/buttonsignup"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/bold"
+        android:text="Sign Up"
+        android:textColor="#fff"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/haveaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:fontFamily="@font/din"
+        android:gravity="center"
+        android:text="Already have an account ?"
+        android:textColor="@color/Grau"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-22dp"
+        android:layout_marginLeft="90dp"
+        android:fontFamily="@font/bold"
+        android:text="Sign In"
+        android:textColor="@color/Orang"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

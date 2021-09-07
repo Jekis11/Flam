@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relMaim"
+    android:visibility="gone"
+    tools:context=".SplashScreenActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_rawRes="@raw/flamscreen"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        />
+
+
+    <TextView
+        android:id="@+id/txtscreen1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:text="FLAM"
+
+        android:textSize="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:textStyle="bold"
+        android:textColor="@color/Orang"
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:id="@+id/txtscreen2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="musical instrument shop"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/Grau"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Without music life would be a mistake"
+        android:gravity="center"
+        android:layout_marginTop="660dp"
+        android:textColor="@color/Grau"
+        android:fontFamily="@font/medium"
+        android:textSize="15dp"
+        />
+
+
+
+</RelativeLayout>
