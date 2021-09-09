@@ -48,9 +48,8 @@
         android:drawablePadding="5dp"
         android:fontFamily="@font/bold"
         android:paddingLeft="10dp"
-        android:text="Password"
-        android:inputType="textPassword"
-        android:textColor="@color/Orang" />
+        android:hint="Password"
+        android:textColorHint="@color/Orang" />
 
 
     <TextView
@@ -83,8 +82,20 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/din"
         android:gravity="center"
-        android:text="Don't have an account ? Sign Up"
+        android:text="Don't have an account ?"
         android:textColor="@color/Grau"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-22dp"
+        android:layout_marginLeft="125dp"
+        android:fontFamily="@font/bold"
+        android:text="Sign In"
+        android:textColor="@color/Orang"
         android:textSize="18dp"
         android:textStyle="bold" />
 

@@ -22,7 +22,7 @@
         android:fontFamily="@font/bold"
         android:letterSpacing="0.03"
         android:text="Register"
-        android:textColor="@color/Grau"
+        android:textColor="@color/Orang"
         android:textSize="35dp" />
 
     <EditText
@@ -34,9 +34,9 @@
         android:drawablePadding="5dp"
         android:fontFamily="@font/bold"
         android:paddingLeft="10dp"
-        android:text="Name"
+        android:hint="Name"
         android:inputType="textPersonName"
-        android:textColor="@color/Orang" />
+        android:textColorHint="@color/Orang" />
 
 
     <EditText
@@ -48,9 +48,9 @@
         android:drawablePadding="5dp"
         android:fontFamily="@font/bold"
         android:paddingLeft="10dp"
-        android:text="Email"
+        android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColor="@color/Orang" />
+        android:textColorHint="@color/Orang" />
 
     <EditText
         android:layout_width="350dp"
@@ -61,8 +61,8 @@
         android:drawablePadding="5dp"
         android:fontFamily="@font/bold"
         android:paddingLeft="10dp"
-        android:text="Password"
-        android:textColor="@color/Orang" />
+        android:hint="Password"
+        android:textColorHint="@color/Orang" />
 
 
 
