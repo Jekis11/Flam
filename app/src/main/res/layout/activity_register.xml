@@ -35,6 +35,7 @@
         android:fontFamily="@font/bold"
         android:paddingLeft="10dp"
         android:text="Name"
+        android:inputType="textPersonName"
         android:textColor="@color/Orang" />
 
 
@@ -48,6 +49,7 @@
         android:fontFamily="@font/bold"
         android:paddingLeft="10dp"
         android:text="Email"
+        android:inputType="textEmailAddress"
         android:textColor="@color/Orang" />
 
     <EditText
