@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/relMaim"
+    android:background="#FAF6F3"
     android:visibility="gone"
     tools:context=".SplashScreenActivity">
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:lottie_rawRes="@raw/flamscreen"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        />
+        app:lottie_rawRes="@raw/flamscreen" />
 
 
     <TextView
