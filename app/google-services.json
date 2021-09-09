@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "218863012394",
+    "project_id": "flam-6a962",
+    "storage_bucket": "flam-6a962.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218863012394:android:b919084d13b5c893ab5153",
+        "android_client_info": {
+          "package_name": "com.example.flam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218863012394-ljk3npdi99phocp4bj6reko400mp1kt3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTP1kKLfrOPoxOQG7vGcJzo-0yPegLww8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218863012394-ljk3npdi99phocp4bj6reko400mp1kt3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
