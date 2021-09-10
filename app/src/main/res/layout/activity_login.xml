@@ -27,6 +27,7 @@
 
 
     <EditText
+        android:id="@+id/emaillogin"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -40,6 +41,7 @@
         android:textColor="@color/Orang" />
 
     <EditText
+        android:id="@+id/passwordlogin"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
