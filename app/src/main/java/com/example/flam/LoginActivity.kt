@@ -7,8 +7,20 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class LoginActivity : AppCompatActivity() {
+
+    //ViewBinding
+    private lateinit var binding:ActivityLo
+    //ActionBar
+
+    //ProgressDialog
+
+    //FirebaseAuth
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding= ActivityLogi
         setContentView(R.layout.activity_login)
 
         forgetpassword.setOnClickListener {
