@@ -36,9 +36,9 @@
         android:drawablePadding="5dp"
         android:fontFamily="@font/bold"
         android:paddingLeft="10dp"
-        android:text="Email"
+        android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColor="@color/Orang" />
+        android:textColorHint="@color/Orang" />
 
     <EditText
         android:id="@+id/passwordlogin"
