@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.PatternMatcher
 import android.text.TextUtils
 import android.util.Patterns
+import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.example.flam.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -59,10 +60,6 @@ class LoginActivity : AppCompatActivity() {
         //handle click, begin login
         //before loggin in, validate data
         validateData()
-        binding.buttonlogin.setOnClickListener {
-            val intent = Intent(this, ExitLoginActivity::class.java)
-            startActivity(intent)
-        }
 
         forgetpassword.setOnClickListener {
             val intent = Intent(this,ForgotPasswordActivity::class.java)
@@ -100,6 +97,21 @@ class LoginActivity : AppCompatActivity() {
         progressDialog.show()
         firebaseAuth.signInWithEmailAndPassword(email,password)
             .addOnSuccessListener {
+                //login success
+                progressDialog.dismiss()
+                // get User info
+                val firebaseUser = firebaseAuth.currentUser
+                val email = firebaseUser!!.email
+                Toast.makeText(this,"LoggedIn as $email", Toast.LENGTH_SHORT).show()
+
+                //open exitactivity
+                startActivity(Intent(this,ExitLoginActivity::class.java))
+                finish()
+            }
+            .addOnFailureListener{ e->
+                //login failed
+                progressDialog.dismiss()
+                Toast.makeText(this,"Login failed due to ${e.message}", Toast.LENGTH_SHORT).show()
 
             }
     }
