@@ -23,8 +23,6 @@ class OtherMethodsActivity : AppCompatActivity() {
             intent.putExtra(USER_ID, auth.currentUser!!.uid)
             startActivity(intent)
         }
-
-
         buttonloginemail.setOnClickListener {
 
             val providers = arrayListOf(
@@ -36,11 +34,7 @@ class OtherMethodsActivity : AppCompatActivity() {
                 .setAvailableProviders(providers)
                 .build(),
                 RC_SIGN_IN)
-
         }
-
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -63,5 +57,4 @@ class OtherMethodsActivity : AppCompatActivity() {
         const val USER_ID="user_id"
         const val RC_SIGN_IN = 15
     }
-
 }
