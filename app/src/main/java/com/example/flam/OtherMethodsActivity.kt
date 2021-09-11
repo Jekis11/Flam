@@ -17,6 +17,14 @@ class OtherMethodsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_other_methods)
 
+        val auth = FirebaseAuth.getInstance()
+        if(auth.currentUser != null){
+            val intent = Intent(this,ExitLoginActivity::class.java)
+            intent.putExtra(USER_ID, auth.currentUser!!.uid)
+            startActivity(intent)
+        }
+
+
         buttonloginemail.setOnClickListener {
 
             val providers = arrayListOf(
@@ -31,18 +39,8 @@ class OtherMethodsActivity : AppCompatActivity() {
 
         }
 
-            val auth = FirebaseAuth.getInstance()
-            if(auth.currentUser != null){
-                val intent = Intent(this,ExitLoginActivity::class.java)
-                intent.putExtra(USER_ID, auth.currentUser!!.uid)
-                startActivity(intent)
-            }
 
 
-    }
-    companion object {
-        const val USER_ID="user_id"
-        const val RC_SIGN_IN = 15
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -61,4 +59,9 @@ class OtherMethodsActivity : AppCompatActivity() {
             }
         }
     }
+    companion object {
+        const val USER_ID="user_id"
+        const val RC_SIGN_IN = 15
+    }
+
 }
