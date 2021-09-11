@@ -93,6 +93,7 @@ class LoginActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
         }
+
         if(auth.currentUser != null){
             val intent = Intent(this,ExitLoginActivity::class.java)
             intent.putExtra(USER_ID, auth.currentUser!!.uid)
