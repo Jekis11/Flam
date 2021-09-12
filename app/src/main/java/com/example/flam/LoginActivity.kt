@@ -16,13 +16,12 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-    private val TAG = LoginActivity::class.qualifiedName
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-       val auth = FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
 
         buttonlogin.setOnClickListener {
             doLogin()
@@ -94,49 +93,8 @@ class LoginActivity : AppCompatActivity() {
             ).show()
         }
 
-        if(auth.currentUser != null){
-            val intent = Intent(this,ExitLoginActivity::class.java)
-            intent.putExtra(USER_ID, auth.currentUser!!.uid)
-            startActivity(intent)
-        }
-        buttonloginandere.setOnClickListener {
-
-            val providers = arrayListOf(
-                AuthUI.IdpConfig.EmailBuilder().build()
-            )
-
-            startActivityForResult(
-                AuthUI.getInstance()
-                .createSignInIntentBuilder()
-                .setAvailableProviders(providers)
-                .build(),
-                RC_SIGN_IN)
-        }
     }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == RC_SIGN_IN){
-            val response = IdpResponse.fromResultIntent(data)
-
-            if(resultCode == Activity.RESULT_OK){
-                val user = FirebaseAuth.getInstance().currentUser
-                val intent = Intent(this,ExitLoginActivity::class.java)
-                intent.putExtra(USER_ID, user!!.uid)
-                startActivity(intent)
-            }
-            else{
-                Log.e(TAG,"Sign-in failed", response!!.error)
-            }
-        }
-    }
-    companion object {
-        const val USER_ID="user_id"
-        const val RC_SIGN_IN = 15
-    }
-    }
-
-
+}
 
 
 
