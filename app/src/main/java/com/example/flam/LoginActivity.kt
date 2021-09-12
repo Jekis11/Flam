@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.buttonlogin
-import kotlinx.android.synthetic.main.activity_others_login_methots.*
+
 
 class LoginActivity : AppCompatActivity() {
 
