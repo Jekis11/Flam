@@ -37,10 +37,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-       // buttonloginandere.setOnClickListener {
-        //     val intent = Intent(this,OthersLoginMethots::class.java)
-        //    startActivity(intent)
-        //  }
 
         signup.setOnClickListener {
             val intent = Intent(this,RegisterActivity::class.java)
@@ -104,13 +100,15 @@ class LoginActivity : AppCompatActivity() {
 
         buttonloginandere.setOnClickListener {
             val providers = arrayListOf(
-                AuthUI.IdpConfig.EmailBuilder().build()
+                AuthUI.IdpConfig.EmailBuilder().build(),
+                AuthUI.IdpConfig.GoogleBuilder().build()
             )
 
             startActivityForResult(
                 AuthUI.getInstance()
                     .createSignInIntentBuilder()
                     .setAvailableProviders(providers)
+                    .setIsSmartLockEnabled(!BuildConfig.DEBUG, true)
                     .build(),
                 RC_SIGN_IN
             )
