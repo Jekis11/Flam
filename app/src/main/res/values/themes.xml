@@ -7,4 +7,12 @@
         <item name="colorAccent">@color/Schwarz</item>
         <!-- Customize your theme here. -->
     </style>
+    
+    
+    <style name="SigninTheme" parent="FirebaseUI">
+        <item name ="android:windowBackground">@drawable/cat</item>
+        <item name ="windowActionBar">false</item>
+        <item name ="windowNoTitle">true</item>
+
+    </style>
 </resources>
