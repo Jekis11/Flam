@@ -12,13 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flam">
         <activity
-            android:name=".OthersLoginMethots"
-            android:exported="true" />
-        <activity
             android:name=".ExitLoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".OtherMethodsActivity"
             android:exported="true" />
         <activity
             android:name=".ForgotPasswordActivity"
