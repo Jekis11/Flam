@@ -112,5 +112,14 @@
         android:textColor="#fff"
         android:textSize="18dp" />
 
+    <Button
+        android:id="@+id/buttonfinger"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="-82dp"
+        android:layout_marginRight="130dp"
+        android:background="@drawable/ic_baseline_fingerprint_24"
+        android:textSize="18dp" />
+
 
 </LinearLayout>

@@ -142,8 +142,7 @@ class LoginActivity : AppCompatActivity() {
         const val RC_SIGN_IN = 15
     }
 
-
-    }
+}
 
 
 
