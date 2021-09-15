@@ -13,6 +13,8 @@ import android.os.Bundle
 import android.os.CancellationSignal
 import android.util.Log
 import android.util.Patterns
+import android.widget.CheckBox
+import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
@@ -28,6 +30,7 @@ import kotlinx.android.synthetic.main.activity_login.buttonlogin
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var CheckBox: CheckBox
     private val TAG = MainActivity::class.qualifiedName
     private var cancellationSignal: CancellationSignal? = null
     private val authenticationCallback: BiometricPrompt.AuthenticationCallback
@@ -46,6 +49,8 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+
+
     private fun notifyUser(message: String){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show()
     }
@@ -58,6 +63,12 @@ class LoginActivity : AppCompatActivity() {
         val autr = FirebaseAuth.getInstance()
 
         checkBiometricSupport()
+
+
+
+        //checkbox
+
+
 
         buttonfinger.setOnClickListener{
             val biometricPrompt:BiometricPrompt  = BiometricPrompt.Builder(this)
@@ -177,6 +188,7 @@ class LoginActivity : AppCompatActivity() {
                 AuthUI.IdpConfig.GoogleBuilder().build(),
                 AuthUI.IdpConfig.FacebookBuilder().build(),
                 AuthUI.IdpConfig.PhoneBuilder().setDefaultCountryIso("MD").build()
+
             )
 
             startActivityForResult(
