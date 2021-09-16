@@ -59,4 +59,7 @@ dependencies {
 
     //3 Facebook Login
     implementation 'com.facebook.android:facebook-login:4.41.0'
+
+    //4 Twitter Login
+    implementation 'com.twitter.sdk.android:twitter-core:3.1.1'
 }
