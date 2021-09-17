@@ -69,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
 
         //checkbox
 
-
+        //fingerprint
         buttonfinger.setOnClickListener{
             val biometricPrompt:BiometricPrompt  = BiometricPrompt.Builder(this)
                 .setTitle("Title of prompt")
@@ -217,8 +217,7 @@ class LoginActivity : AppCompatActivity() {
                 Log.e(TAG, "Sign-in failed", response!!.error)
             }
         }
-        finish()
-
+        return
     }
 
     companion object {
