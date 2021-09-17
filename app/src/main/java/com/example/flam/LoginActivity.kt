@@ -185,7 +185,7 @@ class LoginActivity : AppCompatActivity() {
                 AuthUI.IdpConfig.GoogleBuilder().build(),
                 AuthUI.IdpConfig.FacebookBuilder().build(),
                 AuthUI.IdpConfig.PhoneBuilder().setDefaultCountryIso("MD").build(),
-                AuthUI.IdpConfig.TwitterBuilder().build()
+                AuthUI.IdpConfig.TwitterBuilder().build(),
             )
 
 
@@ -198,7 +198,6 @@ class LoginActivity : AppCompatActivity() {
                     .build(),
                 RC_SIGN_IN
             )
-
         }
     }
 
@@ -208,16 +207,19 @@ class LoginActivity : AppCompatActivity() {
         if (requestCode == RC_SIGN_IN) {
             val response = IdpResponse.fromResultIntent(data)
 
+
             if (resultCode == Activity.RESULT_OK) {
                 val user = FirebaseAuth.getInstance().currentUser
                 val intent = Intent(this, HauptActivity::class.java)
                 intent.putExtra(USER_ID, user!!.uid)
                 startActivity(intent)
-            } else {
+                finish()
+            } else if(resultCode == Activity.RESULT_CANCELED) {
+                Toast.makeText(this, "Sign in canceled", Toast.LENGTH_SHORT).show();
+                return
                 Log.e(TAG, "Sign-in failed", response!!.error)
             }
         }
-        return
     }
 
     companion object {
