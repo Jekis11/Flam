@@ -188,6 +188,7 @@ class LoginActivity : AppCompatActivity() {
                 AuthUI.IdpConfig.TwitterBuilder().build()
             )
 
+
             startActivityForResult(
                 AuthUI.getInstance()
                     .createSignInIntentBuilder()
@@ -197,7 +198,7 @@ class LoginActivity : AppCompatActivity() {
                     .build(),
                 RC_SIGN_IN
             )
-            finish()
+
         }
     }
 
@@ -216,6 +217,7 @@ class LoginActivity : AppCompatActivity() {
                 Log.e(TAG, "Sign-in failed", response!!.error)
             }
         }
+        finish()
 
     }
 
