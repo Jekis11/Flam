@@ -179,9 +179,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-
-
-
         buttonloginandere.setOnClickListener {
             val providers = arrayListOf(
                 AuthUI.IdpConfig.EmailBuilder().build(),
@@ -189,7 +186,6 @@ class LoginActivity : AppCompatActivity() {
                 AuthUI.IdpConfig.FacebookBuilder().build(),
                 AuthUI.IdpConfig.PhoneBuilder().setDefaultCountryIso("MD").build(),
                 AuthUI.IdpConfig.TwitterBuilder().build()
-
             )
 
             startActivityForResult(
@@ -201,6 +197,7 @@ class LoginActivity : AppCompatActivity() {
                     .build(),
                 RC_SIGN_IN
             )
+            finish()
         }
     }
 
