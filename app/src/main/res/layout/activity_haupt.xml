@@ -21,13 +21,10 @@
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:id="@+id/bottom_navbar"
+        android:id="@+id/navbar"
         android:layout_alignParentBottom="true"
         android:background="#fff"
         app:cnb_menuResource="@menu/nav_menu"
-
-
-
 
 
         />
