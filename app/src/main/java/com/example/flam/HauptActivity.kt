@@ -11,7 +11,6 @@ import com.example.flam.HauptModels.AccountActivity
 import com.example.flam.HauptModels.ContactGoogleActivity
 import com.example.flam.HauptModels.ViewPagerAdapter
 import com.example.flam.databinding.ActivityHauptBinding
-import com.example.flam.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_haupt.*
 import java.util.ArrayList
