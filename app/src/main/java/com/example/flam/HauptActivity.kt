@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.flam.HauptModels.ContactFragment
 import com.example.flam.HauptModels.PersonFragment
+import com.example.flam.HauptModels.SettingsActivity
 import com.example.flam.HauptModels.ViewPagerAdapter
 import com.example.flam.databinding.ActivityHauptBinding
 
@@ -31,6 +32,7 @@ class HauptActivity : AppCompatActivity() {
         binding.navbar.setOnItemSelectedListener {
             when(it) {
                 R.id.home -> {
+
                     viewpager.currentItem = 0
                     binding.textHaupt.text = "Home"
                     binding.navbar.showBadge(R.id.home)
@@ -51,11 +53,15 @@ class HauptActivity : AppCompatActivity() {
                         .replace(R.id.framelayout, personFragment).commit()
                     viewpager.currentItem = 2
                     binding.textHaupt.text = "Account"
-                    binding.navbar.showBadge(R.id.nav_person)
+
 
                 }
 
                 R.id.nav_settings -> {
+                    val settingsFragment = SettingsActivity()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.framelayout, settingsFragment).commit()
+
                     viewpager.currentItem = 3
                     binding.textHaupt.text = "Settings"
                     binding.navbar.showBadge(R.id.nav_settings,10000)

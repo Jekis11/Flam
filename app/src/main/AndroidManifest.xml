@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flam">
         <activity
+            android:name=".HauptModels.SettingsActivity"
+            android:exported="true" />
+        <activity
             android:name=".HauptModels.AccountActivity"
             android:exported="true" />
         <activity
