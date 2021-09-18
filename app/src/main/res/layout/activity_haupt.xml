@@ -37,7 +37,6 @@
         android:background="#fff"
         app:cnb_menuResource="@menu/nav_menu"
 
-
         />
 
 
