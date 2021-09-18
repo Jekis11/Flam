@@ -32,7 +32,7 @@ class HauptActivity : AppCompatActivity() {
                 R.id.home -> binding.textHaupt.text = "Home"
                 R.id.nav_contact -> binding.textHaupt.text = "Contact"
                 R.id.nav_person -> {
-                    val intent = Intent(this,ContactGoogleActivity::class.java)
+                    val intent = Intent(this,AccountActivity::class.java)
                     startActivity(intent)
                     binding.textHaupt.text = "Account"
                     binding.navbar.showBadge(R.id.nav_person)
