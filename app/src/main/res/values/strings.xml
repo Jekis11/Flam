@@ -5,4 +5,6 @@
 
     <string name="twitter_consumer_key" translatable="false">pl4hz1nERf5mRwO72GNqEYuOc</string>
     <string name="twitter_consumer_secret" translatable="false">sQeo75eukVhqDxgqm9TuYqnGkClritsAayhJ3hqVyq3c4JNhGp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

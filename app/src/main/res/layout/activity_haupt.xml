@@ -17,21 +17,23 @@
         android:fontFamily="@font/bold"
         />
 
-
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    
+    
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:id="@+id/navbar"
         android:layout_alignParentBottom="true"
         android:background="#fff"
         app:cnb_menuResource="@menu/nav_menu"
 
 
         />
-
-
-
-
 
 
 </RelativeLayout>

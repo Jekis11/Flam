@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flam">
     <!-- Add Internet Permisssion -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,6 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Flam">
+        <activity
+            android:name=".HauptModels.AccountActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HauptModels.ContactGoogleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HauptModels.ContactActivityGoogle"
+            android:exported="true" />
         <activity
             android:name=".HauptActivity"
             android:exported="true" />
