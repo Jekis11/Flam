@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.flam.HauptModels.ContactFragment
 import com.example.flam.HauptModels.PersonFragment
 import com.example.flam.HauptModels.ViewPagerAdapter
 import com.example.flam.databinding.ActivityHauptBinding
