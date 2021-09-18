@@ -32,13 +32,32 @@ class HauptActivity : AppCompatActivity() {
     private fun setUpTabbar() {
         binding.navbar.setOnItemSelectedListener {
             when(it) {
-                R.id.home -> viewpager.currentItem = 0
+                R.id.home -> {
+                    viewpager.currentItem = 0
+                    binding.textHaupt.text = "Home"
 
-                R.id.nav_contact -> viewpager.currentItem = 1
+                }
 
-                R.id.nav_person -> viewpager.currentItem = 2
+                R.id.nav_contact -> {
+                    viewpager.currentItem = 1
+                    binding.textHaupt.text = "Contact"
+                    val contactintent = Intent(this, ContactGoogleActivity::class.java)
+                    startActivity(contactintent)
 
-                R.id.nav_settings -> viewpager.currentItem=3
+                }
+                R.id.nav_person -> {
+                    viewpager.currentItem = 2
+                    binding.textHaupt.text = "Account"
+                    binding.navbar.showBadge(R.id.nav_settings)
+
+                }
+
+                R.id.nav_settings -> {
+                    viewpager.currentItem = 3
+                    binding.textHaupt.text = "Settings"
+                    binding.navbar.showBadge(R.id.nav_settings)
+
+                }
             }
         }
 
