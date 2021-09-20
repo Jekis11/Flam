@@ -6,6 +6,15 @@
     tools:context=".HauptModels.ContactFragment">
 
 
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/map"
+        tools:context=".MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        />
 
 
 
@@ -15,7 +24,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/ic_round_assistant_direction_24"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="340dp"
         />
 
     <Button
@@ -23,7 +32,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/ic_baseline_phone_24"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="360dp"
         />
 
     <Button
@@ -31,7 +40,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/emailblack"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="380dp"
         />
 
     <Button
@@ -39,7 +48,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/ic_baseline_local_taxi_24"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="400dp"
         />
 
 
