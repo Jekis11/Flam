@@ -49,7 +49,7 @@
         android:id="@+id/buttongetdirection"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="360dp"
         android:background="@drawable/ic_round_assistant_direction_24" />
 
     <Button
@@ -57,7 +57,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/ic_baseline_phone_24"
-        android:layout_marginTop="375dp"
+        android:layout_marginTop="385dp"
         />
 
     <Button
@@ -65,7 +65,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/emailblack"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="360dp"
         android:layout_marginLeft="200dp"
         />
 
@@ -73,7 +73,7 @@
         android:id="@+id/buttontaxi"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginTop="375dp"
+        android:layout_marginTop="385dp"
         android:background="@drawable/ic_baseline_local_taxi_24"
         android:layout_marginLeft="200dp"
         />
@@ -81,48 +81,48 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="363dp"
         android:fontFamily="@font/bold"
         android:text="Get Directions"
         android:textColor="@color/Orang"
-        android:layout_marginLeft="30dp"
 
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="375dp"
-        android:text="Phone"
-        android:fontFamily="@font/bold"
-        android:textColor="@color/Orang"
         android:layout_marginLeft="30dp"
-        />
+        android:layout_marginTop="388dp"
+        android:fontFamily="@font/bold"
+        android:text="+49263242093"
+        android:textColor="@color/Orang" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="363dp"
+        android:fontFamily="@font/bold"
         android:text="Ride with uber"
-        android:fontFamily="@font/bold"
-        android:textColor="@color/Orang"
-        android:layout_marginLeft="230dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="375dp"
-        android:text="Email Store"
-        android:fontFamily="@font/bold"
-        android:textColor="@color/Orang"
-        android:layout_marginLeft="230dp"
-        />
+        android:textColor="@color/Orang" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="388dp"
+        android:fontFamily="@font/bold"
+        android:text="Email Store"
+        android:textColor="@color/Orang" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:fontFamily="@font/black"
         android:paddingTop="0dp"
-        android:text="CONTACT INFO"
-        android:layout_alignParentBottom="true"
-        />
+        android:textColor="@color/Blau"
+        android:text="CONTACT INFO" />
 
 </RelativeLayout>
