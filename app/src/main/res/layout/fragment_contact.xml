@@ -6,7 +6,7 @@
     tools:context=".HauptModels.ContactFragment">
 
 
-    <com.google.android.gms.maps.MapView
+    <fragment
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -49,16 +49,15 @@
         android:id="@+id/buttongetdirection"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:background="@drawable/ic_round_assistant_direction_24"
-        android:layout_marginTop="340dp"
-        />
+        android:layout_marginTop="350dp"
+        android:background="@drawable/ic_round_assistant_direction_24" />
 
     <Button
         android:id="@+id/buttonphone"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/ic_baseline_phone_24"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="375dp"
         />
 
     <Button
@@ -66,49 +65,55 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/emailblack"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="200dp"
         />
 
     <Button
-        android:id="@+id/buttontaxt"
+        android:id="@+id/buttontaxi"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:layout_marginTop="375dp"
         android:background="@drawable/ic_baseline_local_taxi_24"
-        android:layout_marginTop="400dp"
+        android:layout_marginLeft="200dp"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="350dp"
         android:fontFamily="@font/bold"
         android:text="Get Directions"
         android:textColor="@color/Orang"
+        android:layout_marginLeft="30dp"
 
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="375dp"
         android:text="Phone"
         android:fontFamily="@font/bold"
         android:textColor="@color/Orang"
+        android:layout_marginLeft="30dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="350dp"
         android:text="Ride with uber"
         android:fontFamily="@font/bold"
         android:textColor="@color/Orang"
+        android:layout_marginLeft="230dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="375dp"
         android:text="Email Store"
         android:fontFamily="@font/bold"
         android:textColor="@color/Orang"
+        android:layout_marginLeft="230dp"
         />
 
     <TextView
