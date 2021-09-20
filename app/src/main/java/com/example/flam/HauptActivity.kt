@@ -34,7 +34,6 @@ class HauptActivity : AppCompatActivity() {
                 R.id.home -> {
 
                     viewpager.currentItem = 0
-                    binding.textHaupt.text = "Home"
                     binding.navbar.showBadge(R.id.home)
 
                 }
