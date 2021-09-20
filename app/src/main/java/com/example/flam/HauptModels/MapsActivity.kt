@@ -19,15 +19,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
 
-        val mapFragment = supportFragmentManager
-                .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        // Get the SupportMapFragment and request notification when the map is ready to be used.
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
+        mapFragment?.getMapAsync(this)
     }
 
-    override fun onMapReady(p0: GoogleMap) {
+    override fun onMapReady(googleMap: GoogleMap) {
         this.googleMap = googleMap
 
-        val andernach = LatLng(50.43109, 7.40425)
+        val andernach = LatLng(50.43109, -7.40425)
         googleMap.addMarker(MarkerOptions().position(andernach).title("Andernach"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(andernach))
     }
