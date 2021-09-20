@@ -44,7 +44,6 @@ class HauptActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.framelayout, contactFragment).commit()
                     viewpager.currentItem = 1
-                    binding.textHaupt.text = "Contact"
 
                 }
                 R.id.nav_person -> {
@@ -52,7 +51,6 @@ class HauptActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.framelayout, personFragment).commit()
                     viewpager.currentItem = 2
-                    binding.textHaupt.text = "Account"
 
 
                 }
@@ -62,7 +60,6 @@ class HauptActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.framelayout, settingsFragment).commit()
                     viewpager.currentItem = 3
-                    binding.textHaupt.text = "Settings"
                     binding.navbar.showBadge(R.id.nav_settings,10000)
 
                 }
