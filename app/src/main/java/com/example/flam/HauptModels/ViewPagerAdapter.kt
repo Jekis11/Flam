@@ -48,7 +48,6 @@ class ViewPagerAdapter (supportFragmentManager: FragmentManager): FragmentPagerA
             savedInstanceState: Bundle?
         ): View? {
             var rootView = LayoutInflater.from(context).inflate(R.layout.fragment_oigen,null, false)
-            rootView.tv_position.text = param1
             return rootView
         }
     }
