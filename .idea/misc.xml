@@ -23,7 +23,7 @@
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/activity_splash_screen.xml" value="0.19739583333333333" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_account.xml" value="0.19739583333333333" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_blank.xml" value="0.18333333333333332" />
-        <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_contact.xml" value="0.33" />
+        <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_contact.xml" value="0.2" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_oigen.xml" value="0.19739583333333333" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_person.xml" value="0.2" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_settings.xml" value="0.1421875" />
@@ -40,5 +40,8 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="SuppressKotlinCodeStyleNotification">
+    <option name="disableForAll" value="true" />
   </component>
 </project>
