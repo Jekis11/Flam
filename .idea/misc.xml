@@ -15,6 +15,7 @@
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/activity_haupt.xml" value="0.25" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/activity_maps.xml" value="0.1140625" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/activity_other_methods.xml" value="0.25" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/activity_others_login_methots.xml" value="0.17604166666666668" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/activity_register.xml" value="0.25" />
@@ -22,7 +23,7 @@
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/activity_splash_screen.xml" value="0.19739583333333333" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_account.xml" value="0.19739583333333333" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_blank.xml" value="0.18333333333333332" />
-        <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_contact.xml" value="0.1778846153846154" />
+        <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_contact.xml" value="0.25" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_oigen.xml" value="0.19739583333333333" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_person.xml" value="0.2" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_settings.xml" value="0.1421875" />

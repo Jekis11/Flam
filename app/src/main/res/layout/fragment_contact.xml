@@ -6,17 +6,43 @@
     tools:context=".HauptModels.ContactFragment">
 
 
-    <fragment
+    <com.google.android.gms.maps.MapView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:id="@+id/map"
-        tools:context=".MapsActivity"
+        tools:context=".HauptModels.MapsActivity"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         />
 
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Musical Instrument Shop Flam"
+        android:layout_marginTop="300dp"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/Schwarz"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sarland Strasse 8"
+        android:layout_marginTop="315dp"
+        android:fontFamily="@font/din"
+        android:textColor="@color/Schwarz"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        android:fontFamily="@font/din"
+        android:text="Andernach,PZ 56626"
+        android:textColor="@color/Schwarz" />
 
 
     <Button
@@ -51,5 +77,47 @@
         android:layout_marginTop="400dp"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:fontFamily="@font/bold"
+        android:text="Get Directions"
+        android:textColor="@color/Orang"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="Phone"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/Orang"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="Ride with uber"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/Orang"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="Email Store"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/Orang"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/black"
+        android:paddingTop="0dp"
+        android:text="CONTACT INFO"
+        android:layout_alignParentBottom="true"
+        />
 
 </RelativeLayout>
