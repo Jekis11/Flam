@@ -1,10 +1,12 @@
 package com.example.flam
 
 
+import android.graphics.Insets.add
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
 import com.example.flam.HauptModels.ContactFragment
 import com.example.flam.HauptModels.PersonFragment
 import com.example.flam.HauptModels.SettingsFragment
@@ -30,7 +32,7 @@ class HauptActivity : AppCompatActivity() {
 
     private fun setUpTabbar() {
         binding.navbar.setOnItemSelectedListener {
-            when(it) {
+            when (it) {
                 R.id.home -> {
 
                     viewpager.currentItem = 0
@@ -41,14 +43,14 @@ class HauptActivity : AppCompatActivity() {
                 R.id.nav_contact -> {
                     val contactFragment = ContactFragment()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.framelayout, contactFragment).commit()
+                            .replace(R.id.framelayout, contactFragment).commit()
                     viewpager.currentItem = 1
 
                 }
                 R.id.nav_person -> {
-                    val personFragment = PersonFragment()
+                    val navpersont = PersonFragment()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.framelayout, personFragment).commit()
+                            .replace(R.id.framelayout, navpersont).commit()
                     viewpager.currentItem = 2
 
 
@@ -57,15 +59,15 @@ class HauptActivity : AppCompatActivity() {
                 R.id.nav_settings -> {
                     val settingsFragment = SettingsFragment()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.framelayout, settingsFragment).commit()
+                            .replace(R.id.framelayout, settingsFragment).commit()
                     viewpager.currentItem = 3
-                    binding.navbar.showBadge(R.id.nav_settings,10000)
+                    binding.navbar.showBadge(R.id.nav_settings, 10000)
 
                 }
             }
         }
 
-        viewpager.setOnTouchListener(View.OnTouchListener{v, event -> true})
+        viewpager.setOnTouchListener(View.OnTouchListener { v, event -> true })
         viewpager.adapter = ViewPagerAdapter(supportFragmentManager).apply {
             list = ArrayList<String>().apply {
                 add("Home")
@@ -78,3 +80,4 @@ class HauptActivity : AppCompatActivity() {
     }
 
 }
+

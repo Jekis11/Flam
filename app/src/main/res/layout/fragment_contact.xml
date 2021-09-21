@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HauptModels.ContactFragment">
 
 
@@ -114,13 +115,27 @@
         android:text="Email Store"
         android:textColor="@color/Orang" />
 
+    <ListView
+        android:id="@+id/userlist"
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:layout_marginTop="420dp"></ListView>
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:fontFamily="@font/black"
-        android:paddingTop="0dp"
-        android:textColor="@color/Blau"
-        android:text="CONTACT INFO" />
+        android:layout_marginTop="625dp"
+        android:text="CONTACT INFO"
+        android:textColor="@color/Blau" />
+    
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:layout_marginTop="420dp"
+        android:name="com.example.flam.HauptModels.ContactFragment"
+        />
+
 
 </RelativeLayout>
