@@ -13,7 +13,8 @@ import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    private lateinit var googleMap: GoogleMap
+    private lateinit var mMap: GoogleMap
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +26,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        this.googleMap = googleMap
+        mMap = googleMap
+        val latitude = 50.43109
+        val longitude = 7.40425
+        val zoomLevel = 15f
+        val homeLatLng = LatLng(latitude, longitude)
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(homeLatLng, zoomLevel))
+        mMap.addMarker(MarkerOptions().position(homeLatLng))
 
-        val andernach = LatLng(50.43109, -7.40425)
-        googleMap.addMarker(MarkerOptions().position(andernach).title("Andernach"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(andernach))
+
+
+
     }
 
 }
