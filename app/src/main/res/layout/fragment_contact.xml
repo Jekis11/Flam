@@ -129,13 +129,7 @@
         android:layout_marginTop="625dp"
         android:text="CONTACT INFO"
         android:textColor="@color/Blau" />
-    
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="195dp"
-        android:layout_marginTop="420dp"
-        android:name="com.example.flam.HauptModels.ContactFragment"
-        />
+
 
 
 </RelativeLayout>
