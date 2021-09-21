@@ -119,7 +119,9 @@
         android:id="@+id/userlist"
         android:layout_width="match_parent"
         android:layout_height="195dp"
-        android:layout_marginTop="420dp"></ListView>
+        android:layout_marginTop="420dp">
+
+    </ListView>
 
 
     <TextView
