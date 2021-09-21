@@ -35,8 +35,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(homeLatLng))
 
 
-
-
     }
 
 }
