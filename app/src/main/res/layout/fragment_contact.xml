@@ -78,6 +78,7 @@
         />
 
     <TextView
+        android:id="@+id/textdirection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
@@ -89,6 +90,7 @@
         />
 
     <TextView
+        android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
@@ -98,21 +100,23 @@
         android:textColor="@color/Orang" />
 
     <TextView
+        android:id="@+id/emailstore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="230dp"
         android:layout_marginTop="363dp"
         android:fontFamily="@font/bold"
-        android:text="Ride with uber"
+        android:text="Email Store"
         android:textColor="@color/Orang" />
 
     <TextView
+        android:id="@+id/ridewithuber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="230dp"
         android:layout_marginTop="388dp"
         android:fontFamily="@font/bold"
-        android:text="Email Store"
+        android:text="Ride with Uber"
         android:textColor="@color/Orang" />
 
     <ListView
