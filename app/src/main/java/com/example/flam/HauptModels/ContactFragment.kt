@@ -18,6 +18,21 @@ import kotlinx.android.synthetic.main.fragment_contact.*
 class ContactFragment : Fragment() {
 
 
+    private lateinit var listView: ListView
+
+
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        val rootView = inflater.inflate(R.layout.fragment_contact, container, false)
+        listView = rootView.findViewById(R.id.userlist)
+        val testList = arrayOf("STORY HOURS", "LESSONS HOURS", "EVENTS AT THIS LOCATION")
+        val adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_list_item_1, testList)
+        listView.adapter = adapter
+        return rootView
+    }
+
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
