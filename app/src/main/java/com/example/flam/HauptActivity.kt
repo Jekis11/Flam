@@ -9,23 +9,31 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import com.example.flam.HauptModels.ContactFragment
 import com.example.flam.HauptModels.PersonFragment
 import com.example.flam.HauptModels.SettingsFragment
 import com.example.flam.HauptModels.ViewPagerAdapter
 import com.example.flam.databinding.ActivityHauptBinding
+import com.firebase.ui.auth.AuthUI
+import com.google.firebase.auth.FirebaseAuth
 
 import kotlinx.android.synthetic.main.activity_haupt.*
 import java.util.ArrayList
 
 class HauptActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHauptBinding
+    private lateinit var user: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHauptBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        user = FirebaseAuth.getInstance()
+
+
 
         //setting toolbar
         setSupportActionBar(findViewById(R.id.toolbar))
@@ -43,10 +51,26 @@ class HauptActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.action_print -> {
-            // User chose the "Print" item
+            // User chose the "" item
             Toast.makeText(this,"Print action",Toast.LENGTH_LONG).show()
             true
         }
+
+        R.id.action_logout -> {
+            // User chose the "Bye" item
+
+            Toast.makeText(this,"Bis bald, danke!",Toast.LENGTH_LONG).show()
+            true
+        }
+
+        R.id.action_cart -> {
+            // User chose the "" item
+            // тут просто интент переход в корзину
+            Toast.makeText(this,"Bis bald, danke!",Toast.LENGTH_LONG).show()
+            true
+        }
+
+
         android.R.id.home ->{
             Toast.makeText(this,"Home action",Toast.LENGTH_LONG).show()
             true
