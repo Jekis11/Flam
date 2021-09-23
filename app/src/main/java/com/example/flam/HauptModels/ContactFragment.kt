@@ -8,10 +8,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ListAdapter
+import com.example.flam.HauptActivity
 import com.example.flam.R
 import kotlinx.android.synthetic.main.fragment_contact.*
 
@@ -30,6 +30,22 @@ class ContactFragment : Fragment() {
         val adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_list_item_1, testList)
         listView.adapter = adapter
         return rootView
+
+        listView.onItemClickListener =
+            AdapterView.OnItemClickListener { parent, view, position, id ->
+                if (position==0){
+                    Toast.makeText(requireActivity(), "GUTEM MORGEN",Toast.LENGTH_SHORT).show()
+                }
+                if (position==1){
+                    Toast.makeText(requireActivity(),"KOLEA РАБОТАЕТ",Toast.LENGTH_SHORT).show()
+                }
+                if (position==2){
+                    Toast.makeText(requireActivity(),"CRISTI РАБОТАЕТ",Toast.LENGTH_SHORT).show()
+                }
+
+            }
+
+
     }
 
 
