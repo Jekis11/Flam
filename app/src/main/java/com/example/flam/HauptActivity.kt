@@ -1,6 +1,7 @@
 package com.example.flam
 
 
+import android.content.Intent
 import android.graphics.Insets.add
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -58,8 +59,11 @@ class HauptActivity : AppCompatActivity() {
 
         R.id.action_logout -> {
             // User chose the "Bye" item
-
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
             Toast.makeText(this,"Bis bald, danke!",Toast.LENGTH_LONG).show()
+            finish()
             true
         }
 
