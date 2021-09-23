@@ -68,9 +68,13 @@ class HauptActivity : AppCompatActivity() {
         }
 
         R.id.action_cart -> {
-            // User chose the "" item
-            // тут просто интент переход в корзину
+            // User chose the "Сart" item
+            // тут просто интент поменять на переход в корзину
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
             Toast.makeText(this,"Bis bald, danke!",Toast.LENGTH_LONG).show()
+            finish()
             true
         }
 

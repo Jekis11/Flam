@@ -13,12 +13,13 @@
         android:title="Print"
         app:showAsAction="always"/>
 
-        <item
-            android:id="@+id/action_print"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Print"
-            app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_baseline_more_vert_24"
+        android:title="Print"
+        app:showAsAction="always"/>
 
 
-    </menu>
+
+</menu>
 

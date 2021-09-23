@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="example.javatpoint.com.kotlinoptionsmenu.MainActivity">
+    <item
+        android:id="@+id/action_eins"
+        android:orderInCategory="100"
+        android:title="Oigen1"/>
+    <item
+        android:id="@+id/action_zwei"
+        android:title="Oigen2"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_drei"
+        android:title="Oigen3"
+        app:showAsAction="never"/>
+</menu>

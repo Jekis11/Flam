@@ -36,6 +36,9 @@
             android:layout_height="match_parent"
             />
 
+
+    <include android:menu="@menu/moremenu" />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="0dp"
