@@ -33,13 +33,13 @@ class ContactFragment : Fragment() {
 
         listView.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
-                if (position==0){
+                if (position==1){
                     Toast.makeText(requireActivity(), "GUTEM MORGEN",Toast.LENGTH_SHORT).show()
                 }
-                if (position==1){
+                if (position==2){
                     Toast.makeText(requireActivity(),"KOLEA РАБОТАЕТ",Toast.LENGTH_SHORT).show()
                 }
-                if (position==2){
+                if (position==3){
                     Toast.makeText(requireActivity(),"CRISTI РАБОТАЕТ",Toast.LENGTH_SHORT).show()
                 }
 

@@ -4,7 +4,10 @@ package com.example.flam
 import android.graphics.Insets.add
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.flam.HauptModels.ContactFragment
@@ -24,9 +27,36 @@ class HauptActivity : AppCompatActivity() {
         binding = ActivityHauptBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //setting toolbar
+        setSupportActionBar(findViewById(R.id.toolbar))
+        //home navigation
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setUpTabbar()
+    }
+    //setting menu in action bar
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.my_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.action_print -> {
+            // User chose the "Print" item
+            Toast.makeText(this,"Print action",Toast.LENGTH_LONG).show()
+            true
+        }
+        android.R.id.home ->{
+            Toast.makeText(this,"Home action",Toast.LENGTH_LONG).show()
+            true
+        }
+
+        else -> {
+            // If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+            super.onOptionsItemSelected(item)
+        }
     }
 
 
