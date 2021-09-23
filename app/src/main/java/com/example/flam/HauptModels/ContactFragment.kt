@@ -21,26 +21,6 @@ class ContactFragment : Fragment() {
     val varibale = arrayOf("STORY HOURS", "LESSONS HOURS", "EVENT AT THIS LOCATION")
 
 
-    override fun onCreateView(
-
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-
-        val view = inflater.inflate(R.layout.fragment_contact,container,false)
-        val arrayAdapter: ArrayAdapter<*>
-        var item_list = ArrayList<String>()
-
-        val mListView = view.findViewById<ListView>(R.id.list_item)
-
-        arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_list_item_1, varibale)
-        mListView.adapter = arrayAdapter
-
-        return view
-
-    }
 
 class ContactActivity: AppCompatActivity(){
 
