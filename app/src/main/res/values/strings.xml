@@ -8,4 +8,16 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>
+
+    <string-array name="sample_region1">
+        <item>
+    STORY HOURS
+        </item>
+        <item>
+    LESSONS HOURS
+        </item>
+        <item>
+    EVENTS AT THIS LOCATION
+        </item>
+    </string-array>
 </resources>
