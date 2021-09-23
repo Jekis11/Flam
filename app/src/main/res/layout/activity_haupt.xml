@@ -37,7 +37,6 @@
             />
 
 
-    <include android:menu="@menu/moremenu" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"

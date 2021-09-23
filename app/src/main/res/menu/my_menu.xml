@@ -13,11 +13,19 @@
         android:title="Print"
         app:showAsAction="always"/>
 
+
     <item
-        android:id="@+id/action_more"
-        android:icon="@drawable/ic_baseline_more_vert_24"
-        android:title="Print"
-        app:showAsAction="always"/>
+        android:id="@+id/action_eins"
+        android:title="Oigen1"
+        />
+    <item
+        android:id="@+id/action_zwei"
+        android:title="Oigen1"
+        />
+    <item
+        android:id="@+id/action_drei"
+        android:title="Oigen1"
+        />
 
 
 
