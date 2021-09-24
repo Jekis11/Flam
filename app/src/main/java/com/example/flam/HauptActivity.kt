@@ -2,12 +2,14 @@ package com.example.flam
 
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.graphics.Insets.add
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContentProviderCompat.requireContext
@@ -52,8 +54,15 @@ class HauptActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.themes_night -> {
-            // User chose the "" item
-            Toast.makeText(this,"Print action",Toast.LENGTH_LONG).show()
+            val inNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+            when (inNightTheme){
+                Configuration.UI_MODE_NIGHT_YES ->
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                Configuration.UI_MODE_NIGHT_NO ->
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+            // User chose the "night themes" item
+            Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
             true
         }
 

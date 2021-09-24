@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Orang</item>
         <item name="colorPrimaryDark">@color/Blau</item>
-        <item name="colorAccent">@color/Schwarz</item>
+        <item name="colorAccent">@color/Weiss</item>
         <!-- Customize your theme here. -->
     </style>
 
