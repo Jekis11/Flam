@@ -2,6 +2,7 @@ package com.example.flam
 
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -50,6 +51,14 @@ class HauptActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.themesnight -> {
 
+            // User chose the "night themes" item
+            Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
+            true
+        }
+
+        R.id.contactus -> {
+            val intent = Intent(this,ContactFragment::class.java)
+            startActivity(intent)
             // User chose the "night themes" item
             Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
             true
