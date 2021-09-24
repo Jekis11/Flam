@@ -6,6 +6,8 @@ import android.content.res.Configuration
 import android.graphics.Insets.add
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -54,13 +56,9 @@ class HauptActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.themesnight -> {
-            val inNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-            when (inNightTheme){
-                Configuration.UI_MODE_NIGHT_YES ->
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                Configuration.UI_MODE_NIGHT_NO ->
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }
+            val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+            prefs.edit().putInt(Settings.NIGHT_MODE,mode).apply()
+            AppCompatDelegate.setDefaultNightMode(mode)
             // User chose the "night themes" item
             Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
             true
