@@ -53,7 +53,7 @@ class HauptActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.themes_night -> {
+        R.id.themesnight -> {
             val inNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
             when (inNightTheme){
                 Configuration.UI_MODE_NIGHT_YES ->

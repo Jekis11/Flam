@@ -42,7 +42,7 @@
     </item>
 
     <item
-        android:id="@+id/themes_night"
+        android:id="@+id/themesnight"
         android:title="Themes Night"
         android:icon="@drawable/ic_baseline_mode_night_24"
         />
