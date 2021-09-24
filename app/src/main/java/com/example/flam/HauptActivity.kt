@@ -51,7 +51,7 @@ class HauptActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.action_eins -> {
+        R.id.themes_night -> {
             // User chose the "" item
             Toast.makeText(this,"Print action",Toast.LENGTH_LONG).show()
             true
