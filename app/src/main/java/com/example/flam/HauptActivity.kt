@@ -10,10 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.flam.HauptModels.ContactFragment
-import com.example.flam.HauptModels.PersonFragment
-import com.example.flam.HauptModels.SettingsFragment
-import com.example.flam.HauptModels.ViewPagerAdapter
+import com.example.flam.HauptModels.*
 import com.example.flam.databinding.ActivityHauptBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -72,9 +69,15 @@ class HauptActivity : AppCompatActivity() {
         }
 
             R.id.relievetension -> {
-            val url = Uri.parse("https://docs.google.com/document/d/1aEftqMz_lqwFD9ku2csCqc4CU_yDTAPg-NII3ajfnGM/edit")
-            val intent = Intent(Intent.ACTION_VIEW, url)
-            startActivity(intent)
+                val intent = Intent(this,RelieveTensionActivity::class.java)
+                startActivity(intent)
+            true
+        }
+
+        R.id.reportabug -> {
+            val emailintent = Intent(Intent.ACTION_SENDTO,
+            Uri.fromParts("mailto","kogyxar94@gmail.com",null))
+            startActivity(Intent.createChooser(emailintent,"Send Report Bug Email..."))
             true
         }
 
