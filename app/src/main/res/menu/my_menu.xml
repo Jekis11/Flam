@@ -15,8 +15,8 @@
 
 
     <item
-        android:id="@+id/action_eins"
-        android:title="Contact info"
+        android:id="@+id/profilechange"
+        android:title="Profile Change"
         />
     <item
         android:id="@+id/action_zwei"
@@ -25,8 +25,8 @@
     <menu>
         <group>
             <item
-                android:id="@+id/profilechange"
-                android:title="Profile Change" />
+                android:id="@+id/contactus"
+                android:title="Contact Us" />
 
             <item
                 android:id="@+id/reportabug"
