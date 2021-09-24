@@ -16,17 +16,29 @@
 
     <item
         android:id="@+id/action_eins"
-        android:title="Oigen1"
+        android:title="Contact info"
         />
     <item
         android:id="@+id/action_zwei"
-        android:title="Oigen1"
+        android:title="About App"
+        >
+    <menu>
+        <group>
+            <item
+                android:id="@+id/action_"
+                android:title="About App" />
+        </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/themes_night"
+        android:title="Themes Night"
         />
     <item
         android:id="@+id/action_drei"
-        android:title="Oigen1"
+        android:title="Settings"
         />
-
 
 
 </menu>
