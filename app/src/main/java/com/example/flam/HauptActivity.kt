@@ -56,7 +56,14 @@ class HauptActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.themesnight -> {
-
+            val nightMode = AppCompatDelegate.getDefaultNightMode()
+            if (nightMode == AppCompatDelegate.MODE_NIGHT_YES) {
+                AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_NO)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_YES)
+            }
             // User chose the "night themes" item
             Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
             true
