@@ -2,32 +2,26 @@ package com.example.flam
 
 
 import android.content.Intent
-import android.content.res.Configuration
-import android.graphics.Insets.add
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
-import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.fragment.app.Fragment
 import com.example.flam.HauptModels.ContactFragment
 import com.example.flam.HauptModels.PersonFragment
 import com.example.flam.HauptModels.SettingsFragment
 import com.example.flam.HauptModels.ViewPagerAdapter
 import com.example.flam.databinding.ActivityHauptBinding
-import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 
 import kotlinx.android.synthetic.main.activity_haupt.*
 import java.util.ArrayList
 
 class HauptActivity : AppCompatActivity() {
+
+
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
 
@@ -44,10 +38,9 @@ class HauptActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         //home navigation
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setUpTabbar()
     }
+
     //setting menu in action bar
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.my_menu,menu)
@@ -56,14 +49,7 @@ class HauptActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.themesnight -> {
-            val nightMode = AppCompatDelegate.getDefaultNightMode()
-            if (nightMode == AppCompatDelegate.MODE_NIGHT_YES) {
-                AppCompatDelegate.setDefaultNightMode(
-                    AppCompatDelegate.MODE_NIGHT_NO)
-            } else {
-                AppCompatDelegate.setDefaultNightMode(
-                    AppCompatDelegate.MODE_NIGHT_YES)
-            }
+
             // User chose the "night themes" item
             Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
             true
@@ -102,6 +88,7 @@ class HauptActivity : AppCompatActivity() {
             super.onOptionsItemSelected(item)
         }
     }
+
 
 
     private fun setUpTabbar() {
