@@ -25,8 +25,18 @@
     <menu>
         <group>
             <item
-                android:id="@+id/action_"
-                android:title="About App" />
+                android:id="@+id/profilechange"
+                android:title="Profile Change" />
+
+            <item
+                android:id="@+id/reportabug"
+                android:title="Report a bug" />
+            <item
+                android:id="@+id/relievetension"
+                android:title="Relieve Tension" />
+            <item
+                android:id="@+id/privacypolicy"
+                android:title="Privacy Policy" />
         </group>
         </menu>
     </item>
