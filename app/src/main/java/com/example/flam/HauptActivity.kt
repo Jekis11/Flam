@@ -71,6 +71,13 @@ class HauptActivity : AppCompatActivity() {
             true
         }
 
+            R.id.relievetension -> {
+            val url = Uri.parse("https://docs.google.com/document/d/1aEftqMz_lqwFD9ku2csCqc4CU_yDTAPg-NII3ajfnGM/edit")
+            val intent = Intent(Intent.ACTION_VIEW, url)
+            startActivity(intent)
+            true
+        }
+
         R.id.action_logout -> {
             // User chose the "Bye" item
             val intent = Intent(this, MainActivity::class.java)
