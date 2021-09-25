@@ -28,7 +28,20 @@
             android:id="@+id/framelayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            >
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigationbar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:headerLayout="@layout/nav_header"
+                app:menu="@menu/nav_header_menu"
+
+
+                />
+        </FrameLayout>
 
 
 
@@ -55,21 +68,6 @@
 
             />
 
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigationbar"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            app:headerLayout="@layout/nav_header"
-            app:menu="@menu/nav_header_menu"
-
-
-            />
-        
-        
-        
 
     </RelativeLayout>
 
