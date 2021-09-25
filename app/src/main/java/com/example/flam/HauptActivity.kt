@@ -38,23 +38,17 @@ class HauptActivity : AppCompatActivity() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayShowHomeEnabled(true)
-
+        //Navigation Fragments
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.nav_homes ->
                 {
-                    Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,"Home",Toast.LENGTH_LONG).show()
                 }
 
           }
             true
         }
-
-
-
-
-
-
         //setting toolbar
         setSupportActionBar(findViewById(R.id.toolbar))
         //home navigation
@@ -62,12 +56,13 @@ class HauptActivity : AppCompatActivity() {
         setUpTabbar()
     }
 
+
     //setting menu in action bar
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.my_menu,menu)
         return super.onCreateOptionsMenu(menu)
     }
-
+    //Options Menu in action bar
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.themesnight -> {
 
@@ -136,6 +131,7 @@ class HauptActivity : AppCompatActivity() {
             // Invoke the superclass to handle it.
             super.onOptionsItemSelected(item)
         }
+
     }
 
     private fun setUpTabbar() {
