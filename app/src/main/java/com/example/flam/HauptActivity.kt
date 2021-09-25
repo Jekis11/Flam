@@ -5,14 +5,17 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.system.Os.close
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.drawerlayout.widget.DrawerLayout
 import com.example.flam.HauptModels.*
 import com.example.flam.databinding.ActivityHauptBinding
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 import kotlinx.android.synthetic.main.activity_haupt.*
@@ -29,6 +32,26 @@ class HauptActivity : AppCompatActivity() {
         binding = ActivityHauptBinding.inflate(layoutInflater)
         setContentView(binding.root)
         user = FirebaseAuth.getInstance()
+        val drawerLayout : DrawerLayout = findViewById(R.id.drawerlayout)
+        val navView :  NavigationView = findViewById(R.id.navigationbar)
+        toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        navView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.nav_homes ->
+                {
+                    Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
+                }
+
+          }
+            true
+        }
+
+
+
 
 
 
@@ -103,7 +126,7 @@ class HauptActivity : AppCompatActivity() {
         }
 
 
-        android.R.id.home ->{
+        R.id.home ->{
             Toast.makeText(this,"Home action",Toast.LENGTH_LONG).show()
             true
         }
