@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.flam.HauptModels.*
 import com.example.flam.databinding.ActivityHauptBinding
@@ -19,7 +20,7 @@ import java.util.ArrayList
 
 class HauptActivity : AppCompatActivity() {
 
-
+    lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
 
@@ -27,7 +28,6 @@ class HauptActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHauptBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         user = FirebaseAuth.getInstance()
 
 
@@ -114,8 +114,6 @@ class HauptActivity : AppCompatActivity() {
             super.onOptionsItemSelected(item)
         }
     }
-
-
 
     private fun setUpTabbar() {
         binding.navbar.setOnItemSelectedListener {
