@@ -78,4 +78,7 @@ dependencies {
     //7 Implemention Theme Night
     implementation 'com.google.android.material:material:1.4.0'
 
+    //7 Implemention Icom
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 }
