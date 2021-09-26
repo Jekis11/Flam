@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.system.Os.close
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -31,15 +30,13 @@ class HauptActivity : AppCompatActivity() {
         setContentView(binding.root)
         user = FirebaseAuth.getInstance()
         setSupportActionBar(findViewById(R.id.toolbar))
-        val drawerLayout : DrawerLayout = findViewById(R.id.drawerlayout)
+        val drawer : DrawerLayout =findViewById(R.id.drawerlayout)
         val navView :  NavigationView = findViewById(R.id.navigationbar)
-        toggle = ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.open,R.string.close)
-        toggle.isDrawerIndicatorEnabled = true
-        drawerlayout.addDrawerListener(toggle)
-        toggle.syncState()
+        val drawerToggle = ActionBarDrawerToggle(this, drawerlayout, R.string.open, R.string.close)
+        drawer.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
+        drawerToggle.isDrawerIndicatorEnabled = true
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
         //Navigation Fragments
         navView.setNavigationItemSelectedListener {
             when(it.itemId){

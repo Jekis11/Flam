@@ -1,6 +1,7 @@
 package com.example.flam.HauptModels
 
 import android.annotation.SuppressLint
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.MediaController
@@ -16,7 +17,7 @@ class RelieveTensionActivity : AppCompatActivity() {
         val mediaController : MediaController
         mediaController = MediaController(this)
         mediaController.setAnchorView(videoView)
-        videoView.setVideoPath("https://www.youtube.com/watch?v=IUN664s7N-c&t=2s")
+        videoView.setVideoPath(Uri.parse("https://www.youtube.com/watch?v=IUN664s7N-c&t=2s").toString())
         videoView.start()
         videoView.setMediaController(mediaController)
     }
