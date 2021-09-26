@@ -72,9 +72,9 @@ class HauptActivity : AppCompatActivity() {
         }
 
         R.id.contactus -> {
-            val intent = Intent(this,ContactFragment::class.java)
-            startActivity(intent)
-            // User chose the "night themes" item
+            val contactFragment = ContactFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.framelayout, contactFragment).commit()
             Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
             true
         }

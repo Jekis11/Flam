@@ -12,11 +12,10 @@ class RelieveTensionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_relieve_tension)
-        var videoView : VideoView = findViewById(R.id.video)
-        val mediaController: MediaController
-        mediaController = MediaController(this)
+        val videoView : VideoView = findViewById(R.id.video)
+        val mediaController: MediaController = MediaController(this)
         mediaController.setAnchorView(videoView)
-        videoView.setVideoPath("https://www.youtube.com/watch?v=AIHXRSYW2CI")
+        videoView.setVideoPath("https://www.youtube.com/watch?v=IUN664s7N-c")
         videoView.start()
         videoView.setMediaController(mediaController)
     }

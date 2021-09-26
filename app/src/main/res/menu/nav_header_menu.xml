@@ -8,50 +8,50 @@
         android:id="@+id/nav_homes"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Home"
-        app:cnb_iconColor="#039BE5" />
+        />
 
     <item
         android:id="@+id/nav_prifle"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Profile"
-        app:cnb_iconColor="#FB8C00" />
+         />
 
     <item
         android:id="@+id/nav_category"
         android:icon="@drawable/ic_baseline_category_24"
         android:title="Category"
-        app:cnb_iconColor="#FF1744" />
+         />
 
 
     <item
         android:id="@+id/nav_offers"
         android:icon="@drawable/ic_baseline_local_offer_24"
         android:title="Offers"
-        app:cnb_iconColor="#039BE5" />
+         />
 
     <item
         android:id="@+id/newproducts"
         android:icon="@drawable/ic_baseline_sync_24"
         android:title="New Products"
-        app:cnb_iconColor="#00E676" />
+         />
 
     <item
         android:id="@+id/myorders"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
         android:title="My Orders"
-        app:cnb_iconColor="#FB8C00" />
+         />
 
     <item
         android:id="@+id/mycarts"
         android:icon="@drawable/ic_baseline_add_shopping_cart_24"
         android:title="My Carts"
-        app:cnb_iconColor="#039BE5" />
+        />
 
     <item
         android:id="@+id/nav_settings"
         android:icon="@drawable/icon_setting"
         android:title="Settings"
-        app:cnb_iconColor="#00E676" />
+         />
 
 
     <item android:title="Profile">
@@ -61,7 +61,7 @@
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_baseline_logout_24"
                 android:title="Login"
-                app:cnb_iconColor="#FF1744" />
+                 />
 
         </menu>
 
@@ -74,20 +74,20 @@
                 android:id="@+id/share"
                 android:icon="@drawable/ic_baseline_share_24"
                 android:title="Share"
-                app:cnb_iconColor="#039BE5"/>
+               />
 
             <item
                 android:id="@+id/getlink"
                 android:icon="@drawable/ic_baseline_link_24"
                 android:title="Get Link"
-                app:cnb_iconColor="#FB8C00" />
+                 />
 
 
             <item
                 android:id="@+id/rateus"
                 android:icon="@drawable/ic_baseline_rate_review_24"
                 android:title="Rate Us"
-                app:cnb_iconColor="#00E676" />
+                 />
 
         </menu>
 
