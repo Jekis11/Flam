@@ -11,7 +11,6 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.flam.HauptModels.*
 import com.example.flam.databinding.ActivityHauptBinding
@@ -32,9 +31,11 @@ class HauptActivity : AppCompatActivity() {
         binding = ActivityHauptBinding.inflate(layoutInflater)
         setContentView(binding.root)
         user = FirebaseAuth.getInstance()
+
         val drawerLayout : DrawerLayout = findViewById(R.id.drawerlayout)
         val navView :  NavigationView = findViewById(R.id.navigationbar)
-        toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
+        toggle = ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.open,R.string.close)
+        toggle.isDrawerIndicatorEnabled = true
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayShowHomeEnabled(true)
@@ -51,6 +52,9 @@ class HauptActivity : AppCompatActivity() {
         }
         //setting toolbar
         setSupportActionBar(findViewById(R.id.toolbar))
+        toolbar.setNavigationOnClickListener {
+
+        }
         //home navigation
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setUpTabbar()
