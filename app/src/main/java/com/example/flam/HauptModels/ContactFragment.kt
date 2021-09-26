@@ -33,16 +33,16 @@ class ContactFragment : Fragment() {
         listView.adapter = adapter
         return rootView
 
-        listView.onItemClickListener =
-            AdapterView.OnItemClickListener { parent, view, position, id ->
+        listView.isClickable = true
+        listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
                 if (position==0){
                     showCustomDialog()
                 }
                 if (position==1){
-                    Toast.makeText(requireActivity(),"KOLEA РАБОТАЕТ",Toast.LENGTH_SHORT).show()
+                    showCustomDialog()
                 }
                 if (position==2){
-                    Toast.makeText(requireActivity(),"CRISTI РАБОТАЕТ",Toast.LENGTH_SHORT).show()
+                    showCustomDialog()
                 }
 
             }
