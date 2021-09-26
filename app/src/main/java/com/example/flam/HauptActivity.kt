@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.flam.HauptModels.*
 import com.example.flam.databinding.ActivityHauptBinding
@@ -36,6 +37,9 @@ class HauptActivity : AppCompatActivity() {
         drawer.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
         drawerToggle.isDrawerIndicatorEnabled = true
+
+        // override the onSupportNavigateUp() function to launch the Drawer when the hamburger icon is clicked
+
         //Navigation Fragments
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
@@ -51,6 +55,19 @@ class HauptActivity : AppCompatActivity() {
         //home navigation
 
         setUpTabbar()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        drawerlayout.openDrawer(navigationbar)
+        return true
+    }
+
+    override fun onBackPressed() {
+        if (this.drawerlayout.isDrawerOpen(GravityCompat.START)) {
+            this.drawerlayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 
     //setting menu in action bar
