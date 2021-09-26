@@ -36,9 +36,8 @@ class HauptActivity : AppCompatActivity() {
         val navView :  NavigationView = findViewById(R.id.navigationbar)
         toggle = ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.open,R.string.close)
         toggle.isDrawerIndicatorEnabled = true
-        drawerLayout.addDrawerListener(toggle)
+        drawerlayout.addDrawerListener(toggle)
         toggle.syncState()
-        supportActionBar?.setDisplayShowHomeEnabled(true)
         //Navigation Fragments
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
