@@ -14,6 +14,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.flam.HauptModels.*
 import com.example.flam.databinding.ActivityHauptBinding
+
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -39,6 +40,7 @@ class HauptActivity : AppCompatActivity() {
         drawerlayout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
         //Navigation Fragments
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
