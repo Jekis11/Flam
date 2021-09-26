@@ -9,9 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ListAdapter
 import com.example.flam.HauptActivity
+import com.example.flam.LoginActivity
 import com.example.flam.R
 import kotlinx.android.synthetic.main.fragment_contact.*
 
@@ -33,13 +35,13 @@ class ContactFragment : Fragment() {
 
         listView.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
-                if (position==1){
-                    Toast.makeText(requireActivity(), "GUTEM MORGEN",Toast.LENGTH_SHORT).show()
+                if (position==0){
+                    showCustomDialog()
                 }
-                if (position==2){
+                if (position==1){
                     Toast.makeText(requireActivity(),"KOLEA РАБОТАЕТ",Toast.LENGTH_SHORT).show()
                 }
-                if (position==3){
+                if (position==2){
                     Toast.makeText(requireActivity(),"CRISTI РАБОТАЕТ",Toast.LENGTH_SHORT).show()
                 }
 
@@ -48,9 +50,22 @@ class ContactFragment : Fragment() {
 
     }
 
+    private fun showCustomDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.lay_custom_dialogeins, null)
+        val customDialog = AlertDialog.Builder(requireActivity())
+            .setView(dialogView)
+            .show()
+        val btDismiss = dialogView.findViewById<Button>(R.id.btDismissCustomDialog)
+        btDismiss.setOnClickListener {
+            customDialog.dismiss()
+        }
+    }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+
 
 
         phone.setOnClickListener {
@@ -78,10 +93,8 @@ class ContactFragment : Fragment() {
             val intent = Intent(Intent.ACTION_VIEW, url)
             startActivity(intent)
         }
-        val arrayAdapter: ArrayAdapter<*>
-        val users = arrayOf(
-            "Virat Kohli", "Rohit Sharma", "Steve Smith",
-        )
+
+
 
     }
  }
