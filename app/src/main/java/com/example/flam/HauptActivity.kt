@@ -31,13 +31,14 @@ class HauptActivity : AppCompatActivity() {
         binding = ActivityHauptBinding.inflate(layoutInflater)
         setContentView(binding.root)
         user = FirebaseAuth.getInstance()
-
+        setSupportActionBar(findViewById(R.id.toolbar))
         val drawerLayout : DrawerLayout = findViewById(R.id.drawerlayout)
         val navView :  NavigationView = findViewById(R.id.navigationbar)
         toggle = ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.open,R.string.close)
         toggle.isDrawerIndicatorEnabled = true
         drawerlayout.addDrawerListener(toggle)
         toggle.syncState()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         //Navigation Fragments
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
@@ -50,15 +51,10 @@ class HauptActivity : AppCompatActivity() {
             true
         }
         //setting toolbar
-        setSupportActionBar(findViewById(R.id.toolbar))
-        toolbar.setNavigationOnClickListener {
-
-        }
         //home navigation
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         setUpTabbar()
     }
-
 
     //setting menu in action bar
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
