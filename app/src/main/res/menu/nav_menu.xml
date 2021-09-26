@@ -26,4 +26,6 @@
         android:title="Settings"
         app:cnb_iconColor="#00E676" />
 
+
+
 </menu>
