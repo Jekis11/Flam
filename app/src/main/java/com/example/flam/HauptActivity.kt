@@ -100,9 +100,10 @@ class HauptActivity : AppCompatActivity() {
         }
 
             R.id.relievetension -> {
-                val intent = Intent(this,RelieveTensionActivity::class.java)
+                val url = Uri.parse(" https://www.youtube.com/watch?v=IUN664s7N-c&t=2s")
+                val intent = Intent(Intent.ACTION_VIEW, url)
                 startActivity(intent)
-            true
+                true
         }
 
         R.id.reportabug -> {
