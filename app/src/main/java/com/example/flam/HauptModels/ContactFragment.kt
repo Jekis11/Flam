@@ -5,6 +5,7 @@ package com.example.flam.HauptModels
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,13 +34,16 @@ class ContactFragment : Fragment() {
         listView.adapter = adapter
         return rootView
 
+
         listView.isClickable = true
         listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
                 if (position==0){
-                    showCustomDialog()
+                    val intent = Intent(requireContext(),LoginActivity::class.java)
+                    startActivity(intent)
                 }
                 if (position==1){
-                    showCustomDialog()
+                    val intent = Intent(requireContext(),LoginActivity::class.java)
+                    startActivity(intent)
                 }
                 if (position==2){
                     showCustomDialog()
@@ -52,7 +56,7 @@ class ContactFragment : Fragment() {
 
     private fun showCustomDialog() {
         val dialogView = layoutInflater.inflate(R.layout.lay_custom_dialogeins, null)
-        val customDialog = AlertDialog.Builder(requireActivity())
+        val customDialog = AlertDialog.Builder(requireContext())
             .setView(dialogView)
             .show()
         val btDismiss = dialogView.findViewById<Button>(R.id.btDismissCustomDialog)
