@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dear Customer. We are very glad that you are interested in lessons in playing musical instruments or lessons related to work in a media group. For information, call us at our contacts and we will advise you. Thanks. Have a nice day!"
+        android:text="Dear Customer. We are very glad that you are interested in lessons in playing musical instruments or lessons related to work in a media group. For information, call us at our contacts +49263242093 and we will advise you. Thanks. Have a nice day!"
         android:textSize="16sp"
         android:gravity="center_horizontal"
         android:layout_marginTop="40dp"
