@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg"
+        android:text="EVENTS AT THIS LOCATION"
+        android:textSize="20sp"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        android:textColor="@color/Schwarz"
+        android:fontFamily="@font/black"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The following activities are currently available.
+                Jazz Festival 2021 and a Christian music concert. More information can be found at ticket.de"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        tools:ignore="HardcodedText" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DEDEDE"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        />
+    <Button
+        android:id="@+id/btDismissCustomDialog"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/Blau"
+        android:text="OK"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        />
+</LinearLayout>

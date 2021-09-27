@@ -59,6 +59,17 @@ class ContactFragment : Fragment() {
         }
     }
 
+    private fun showCustomDialogDrei() {
+        val dialogView = layoutInflater.inflate(R.layout.lay_customdialogdrei, null)
+        val customDialog = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .show()
+        val btDismiss = dialogView.findViewById<Button>(R.id.btDismissCustomDialog)
+        btDismiss.setOnClickListener {
+            customDialog.dismiss()
+        }
+    }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -71,7 +82,7 @@ class ContactFragment : Fragment() {
                 showCustomDialogZwei()
             }
             if (position==2){
-                showCustomDialog()
+                showCustomDialogDrei()
             }
 
         }
