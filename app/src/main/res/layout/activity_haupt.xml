@@ -9,55 +9,9 @@
     tools:openDrawer="start"
     tools:context=".HauptActivity">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/drawer_header"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="start"
-        >
-        <com.google.android.material.navigation.NavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/navigationbar"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            android:clipToPadding="false"
-            app:headerLayout="@layout/nav_header"
-            app:menu="@menu/nav_header_menu"
-            />
-    </LinearLayout>
-
-
-    <!-- Custom Navigation Drawer End -->
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <FrameLayout
-            android:id="@+id/framelayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </FrameLayout>
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
@@ -69,6 +23,7 @@
             app:layout_constraintTop_toTopOf="parent"
 
             />
+
         <com.ismaeldivita.chipnavigation.ChipNavigationBar
             android:id="@+id/navbar"
             android:layout_width="match_parent"
@@ -84,7 +39,41 @@
             app:cnb_menuResource="@menu/nav_menu"
 
             />
-
     </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </FrameLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/navigationbar"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            android:clipToPadding="false"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/nav_header_menu"
+            />
+
+
+
+
+    <!-- Custom Navigation Drawer End -->
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
