@@ -110,6 +110,7 @@
         android:text="Email Store"
         android:textColor="@color/Orang" />
 
+
     <TextView
         android:id="@+id/ridewithuber"
         android:layout_width="wrap_content"
@@ -120,13 +121,19 @@
         android:text="Ride with Uber"
         android:textColor="@color/Orang" />
 
-    <ListView
-        android:id="@+id/userlist"
-        android:layout_width="match_parent"
-        android:layout_height="195dp"
-        android:layout_marginTop="420dp">
 
-    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ListView
+            android:id="@+id/userlist"
+            android:layout_width="match_parent"
+            android:layout_height="195dp"
+            android:layout_marginTop="420dp">
+
+        </ListView>
+
+    </LinearLayout>
 
 
     <TextView

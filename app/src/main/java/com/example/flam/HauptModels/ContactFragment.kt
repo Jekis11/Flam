@@ -35,27 +35,6 @@ class ContactFragment : Fragment() {
         return rootView
 
 
-        listView.isClickable = true
-        listView.setOnItemClickListener { adapterView, view, position: Int, id: Long ->
-            val selectedString = adapterView.getItemAtPosition(position) as String
-        }
-
-        listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-                if (position==0){
-                    val intent = Intent(requireContext(),LoginActivity::class.java)
-                    startActivity(intent)
-                }
-                if (position==1){
-                    val intent = Intent(requireContext(),LoginActivity::class.java)
-                    startActivity(intent)
-                }
-                if (position==2){
-                    showCustomDialog()
-                }
-
-            }
-
-
     }
 
     private fun showCustomDialog() {
@@ -69,11 +48,33 @@ class ContactFragment : Fragment() {
         }
     }
 
+    private fun showCustomDialogZwei() {
+        val dialogView = layoutInflater.inflate(R.layout.lay_customdialogzwei, null)
+        val customDialog = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .show()
+        val btDismiss = dialogView.findViewById<Button>(R.id.btDismissCustomDialog)
+        btDismiss.setOnClickListener {
+            customDialog.dismiss()
+        }
+    }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            if (position==0){
+                showCustomDialog()
+            }
+            if (position==1){
+                showCustomDialogZwei()
+            }
+            if (position==2){
+                showCustomDialog()
+            }
 
+        }
 
 
         phone.setOnClickListener {
