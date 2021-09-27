@@ -19,8 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_haupt.*
 import java.util.ArrayList
 
-class HauptActivity : AppCompatActivity() {
-
+class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
@@ -33,24 +32,18 @@ class HauptActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         val drawer : DrawerLayout =findViewById(R.id.drawerlayout)
         val navView :  NavigationView = findViewById(R.id.navigationbar)
-        val drawerToggle = ActionBarDrawerToggle(this, drawerlayout,toolbar, R.string.open, R.string.close)
+        val drawerToggle:ActionBarDrawerToggle = object : ActionBarDrawerToggle(
+            this,
+            drawerlayout,
+            toolbar,
+            R.string.open,
+            R.string.close) {}
+        drawerToggle.isDrawerIndicatorEnabled = true
         drawer.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
-        drawerToggle.isDrawerIndicatorEnabled = true
-
+        navView.setNavigationItemSelectedListener(this)
         // override the onSupportNavigateUp() function to launch the Drawer when the hamburger icon is clicked
 
-        //Navigation Fragments
-        navView.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.nav_homes ->
-                {
-                    Toast.makeText(this,"Home",Toast.LENGTH_LONG).show()
-                }
-
-          }
-            true
-        }
         //setting toolbar
         //home navigation
 
@@ -194,6 +187,14 @@ class HauptActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        drawerlayout.closeDrawer(GravityCompat.START)
+        if(item.itemId == R.id.nav_homes){
+            Toast.makeText(applicationContext,"HOME SCHEISSE", Toast.LENGTH_SHORT).show()
+        }
+        return true
     }
 
 }
