@@ -36,6 +36,10 @@ class ContactFragment : Fragment() {
 
 
         listView.isClickable = true
+        listView.setOnItemClickListener { adapterView, view, position: Int, id: Long ->
+            val selectedString = adapterView.getItemAtPosition(position) as String
+        }
+
         listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
                 if (position==0){
                     val intent = Intent(requireContext(),LoginActivity::class.java)
