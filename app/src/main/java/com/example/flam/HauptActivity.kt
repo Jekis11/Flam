@@ -75,9 +75,9 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 for (document in result) {
 
 
-                    PopularModel popularModel = document.toObject(PopularModel.class);
+                    val popularModel = document.toObject(PopularModel::class.java)
                     popularModelList.add(popularModel);
-                    popularAdapers.notifyDataSetChanged();
+                    popularAdapters.notifyDataSetChanged()
                     Log.d(TAG, "${document.id} => ${document.data}")
                 }
             }
