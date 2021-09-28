@@ -9,6 +9,120 @@
     tools:openDrawer="start"
     tools:context=".HauptActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            //попробуем сюда вставить searchview
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/bold"
+                    android:text="Popular Products"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/viwall_pupular"
+                    android:fontFamily="@font/bold"
+                    android:layout_weight="1"
+                    android:text="View All"
+                    android:gravity="end"
+                    android:layout_marginRight="7dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/Blau"
+                    />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:id="@+id/pop_rec"/>
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/bold"
+                    android:text="Explore Products"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/viwall_explore"
+                    android:fontFamily="@font/bold"
+                    android:layout_weight="1"
+                    android:text="View All"
+                    android:gravity="end"
+                    android:layout_marginRight="7dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/Blau"
+                    />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:id="@+id/explore_rec"/>
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/bold"
+                    android:text="Recommended"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/viwall_recomendet"
+                    android:fontFamily="@font/bold"
+                    android:layout_weight="1"
+                    android:text="View All"
+                    android:gravity="end"
+                    android:layout_marginRight="7dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/Blau"
+                    />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:id="@+id/recomended_rec"/>
+        </LinearLayout>
+    </ScrollView>
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
