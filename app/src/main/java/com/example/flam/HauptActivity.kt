@@ -65,7 +65,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         popularRec.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
         popularModelList = ArrayList()
         popularAdapters = PopularAdapters(this,popularModelList)
-        popularRec.adapter = (popularAdapters)
+        popularRec.adapter = popularAdapters
 
 
 
@@ -76,7 +76,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
 
                     val popularModel = document.toObject(PopularModel::class.java)
-                    popularModelList.add(popularModel);
+                    ? popularModelList.addAll(popularModel)
                     popularAdapters.notifyDataSetChanged()
                     Log.d(TAG, "${document.id} => ${document.data}")
                 }
