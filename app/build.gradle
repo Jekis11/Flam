@@ -38,6 +38,10 @@ android {
         viewBinding true
     }
 
+    repositories {
+        mavenCentral()
+    }
+
 
 }
 
@@ -84,5 +88,8 @@ dependencies {
 
     //9 Implemention Legacy
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //1 Library round imageview
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 
 }
