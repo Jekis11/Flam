@@ -16,6 +16,8 @@ class PopularAdapters(
     private val popularModelList: List<PopularModel>
 ) :
     RecyclerView.Adapter<PopularAdapters.ViewHolder>() {
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.popular_item, parent, false)
