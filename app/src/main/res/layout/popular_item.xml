@@ -22,6 +22,7 @@
             android:src="@drawable/drums"/>
         
         <TextView
+            android:id="@+id/nameproducts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/din"
@@ -53,6 +54,7 @@
                 />
             
             <TextView
+                android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -61,6 +63,7 @@
                 android:fontFamily="@font/bold"/>
 
             <TextView
+                android:id="@+id/pop_discount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -69,11 +72,6 @@
                 android:textStyle="bold"
                 android:gravity="end"
                 android:fontFamily="@font/bold"/>
-
-
-
-
-
 
 
 
