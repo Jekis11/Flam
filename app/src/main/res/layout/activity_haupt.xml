@@ -30,6 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginTop="40dp"
                     android:fontFamily="@font/bold"
                     android:text="Popular Products"
                     android:textSize="18sp" />
@@ -38,6 +39,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/viwall_pupular"
                     android:fontFamily="@font/bold"
+                    android:layout_marginTop="40dp"
                     android:layout_weight="1"
                     android:text="View All"
                     android:gravity="end"
@@ -82,7 +84,7 @@
             </LinearLayout>
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="145dp"
                 android:layout_margin="5dp"
                 android:id="@+id/explore_rec"/>
 
@@ -172,16 +174,16 @@
             app:layout_constraintTop_toTopOf="parent" />
     </FrameLayout>
 
-        <com.google.android.material.navigation.NavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/navigationbar"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            android:clipToPadding="false"
-            app:headerLayout="@layout/nav_header"
-            app:menu="@menu/nav_header_menu"
-            />
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationbar"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:clipToPadding="false"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_header_menu"
+        />
 
 
 
