@@ -29,7 +29,7 @@ import java.util.ArrayList as ArrayList1
 class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var db: FirebaseFirestore
-    val popularModelList: List<PopularModel> = TODO()
+    var popularModelList: List<PopularModel> = TODO()
     lateinit var popularAdapters: PopularAdapters
     lateinit var popularRec:  RecyclerView
     lateinit var toggle : ActionBarDrawerToggle
@@ -63,7 +63,8 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         val popularRec = findViewById<View>(R.id.pop_rec) as RecyclerView
         popularRec.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
-        val popularModelList = arrayListOf()
+        popularModelList = java.util.ArrayList()
+        //val popularModelList = arrayListOf()
         popularAdapters = PopularAdapters(this,popularModelList)
         popularRec.adapter = popularAdapters
 
@@ -76,7 +77,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
 
                     val popularModel = document.toObject(PopularModel::class.java)
-                    popularModelList.add(popularModel)
+                    (popularModelList as java.util.ArrayList<PopularModel>).add(popularModel)
                     popularAdapters.notifyDataSetChanged()
                     Log.d(TAG, "${document.id} => ${document.data}")
                 }
