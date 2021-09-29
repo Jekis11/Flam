@@ -1,6 +1,7 @@
 package com.example.flam
 
 
+import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
@@ -36,6 +37,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHauptBinding.inflate(layoutInflater)
