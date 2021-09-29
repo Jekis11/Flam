@@ -24,12 +24,12 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_haupt.*
-import java.util.ArrayList
+import java.util.ArrayList as ArrayList1
 
 class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var db: FirebaseFirestore
-    lateinit var popularModelList: List<PopularModel>
+    val popularModelList: List<PopularModel> = TODO()
     lateinit var popularAdapters: PopularAdapters
     lateinit var popularRec:  RecyclerView
     lateinit var toggle : ActionBarDrawerToggle
@@ -63,7 +63,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         val popularRec = findViewById<View>(R.id.pop_rec) as RecyclerView
         popularRec.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
-        popularModelList = ArrayList()
+        val popularModelList = arrayListOf()
         popularAdapters = PopularAdapters(this,popularModelList)
         popularRec.adapter = popularAdapters
 
@@ -217,7 +217,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         viewpager.setOnTouchListener(View.OnTouchListener { v, event -> true })
         viewpager.adapter = ViewPagerAdapter(supportFragmentManager).apply {
-            list = ArrayList<String>().apply {
+            list = ArrayList1<String>().apply {
                 add("Home")
                 add("Contact")
                 add("Account")
