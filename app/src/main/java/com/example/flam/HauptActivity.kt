@@ -2,12 +2,10 @@ package com.example.flam
 
 
 import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -15,24 +13,15 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.flam.HauptModels.*
-import com.example.flam.adapter.PopularAdapters
 import com.example.flam.databinding.ActivityHauptBinding
-import com.example.flam.models.PopularModel
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_haupt.*
 import java.util.ArrayList as ArrayList1
 
 class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    lateinit var db: FirebaseFirestore
-    var popularModelList: List<PopularModel> = TODO()
-    lateinit var popularAdapters: PopularAdapters
-    lateinit var popularRec:  RecyclerView
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
@@ -43,7 +32,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         binding = ActivityHauptBinding.inflate(layoutInflater)
         setContentView(binding.root)
         user = FirebaseAuth.getInstance()
-        db = FirebaseFirestore.getInstance()
         setSupportActionBar(findViewById(R.id.toolbar))
 
         val drawer : DrawerLayout =findViewById(R.id.drawerlayout)
@@ -63,30 +51,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         //home navigation
         //Popular item
 
-        val popularRec = findViewById<View>(R.id.pop_rec) as RecyclerView
-        popularRec.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
-        popularModelList = java.util.ArrayList()
-        //val popularModelList = arrayListOf()
-        popularAdapters = PopularAdapters(this,popularModelList)
-        popularRec.adapter = popularAdapters
-
-
-
-        db.collection("PopularProducts")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-
-
-                    val popularModel = document.toObject(PopularModel::class.java)
-                    (popularModelList as java.util.ArrayList<PopularModel>).add(popularModel)
-                    popularAdapters.notifyDataSetChanged()
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Toast.makeText(this, "Error + $exception",Toast.LENGTH_SHORT).show()
-            }
 
         setUpTabbar()
     }
