@@ -2,6 +2,7 @@ package com.example.flam
 
 
 import android.annotation.SuppressLint
+import android.app.PendingIntent.getActivity
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -149,7 +150,8 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         binding.navbar.setOnItemSelectedListener {
             when (it) {
                 R.id.home -> {
-
+                    val intent = Intent(this,HauptActivity::class.java)
+                    startActivity(intent)
                     viewpager.currentItem = 0
                     binding.navbar.showBadge(R.id.home)
 
