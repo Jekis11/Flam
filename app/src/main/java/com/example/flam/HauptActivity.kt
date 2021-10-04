@@ -62,7 +62,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         //Popular item
         popularRec = findViewById(R.id.pop_rec)
         popularRec.layoutManager(LinearLayoutManager(this@HauptActivity,RecyclerView.HORIZONTAL,false))
-        popularModelList = ArrayList<>()
+        popularModelList = java.util.ArrayList()
         popularAdapters = PopularAdapters(this,popularModelList)
         popularRec.adapter = popularAdapters
 
