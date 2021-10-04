@@ -14,15 +14,24 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.flam.HauptModels.*
+import com.example.flam.adapter.PopularAdapters
 import com.example.flam.databinding.ActivityHauptBinding
+import com.example.flam.models.PopularModel
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_haupt.*
 import java.util.ArrayList as ArrayList1
 
 class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    lateinit var popularAdapters : PopularAdapters
+    lateinit var popularModelList : List<PopularModel>
+    lateinit var popularRec : RecyclerView
+    lateinit var db : FirebaseFirestore
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
@@ -51,6 +60,14 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         //setting toolbar
         //home navigation
         //Popular item
+        popularRec = findViewById(R.id.pop_rec)
+        popularRec.layoutManager(LinearLayoutManager(this@HauptActivity,RecyclerView.HORIZONTAL,false))
+        popularModelList = ArrayList<>()
+        popularAdapters = PopularAdapters(this,popularModelList)
+        popularRec.adapter = popularAdapters
+
+
+
 
 
         setUpTabbar()
