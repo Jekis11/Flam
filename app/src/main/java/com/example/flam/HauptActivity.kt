@@ -33,7 +33,7 @@ import java.util.ArrayList as ArrayList1
 class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var popularAdapters : PopularAdapters
-    val db = FirebaseFirestore.getInstance()
+    var db = FirebaseFirestore.getInstance()
     lateinit var popularModelList : List<PopularModel>
     lateinit var popularRec : RecyclerView
     lateinit var toggle : ActionBarDrawerToggle
@@ -46,6 +46,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         binding = ActivityHauptBinding.inflate(layoutInflater)
         setContentView(binding.root)
         user = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
         setSupportActionBar(findViewById(R.id.toolbar))
 
         val drawer : DrawerLayout =findViewById(R.id.drawerlayout)
