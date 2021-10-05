@@ -81,7 +81,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             .addOnSuccessListener { result ->
                 for (document in result) {
                     val popularModel = document.toObject(PopularModel::class.java)
-                    popularModelList.add(popularModel)
+                    (popularModelList as ArrayList<PopularModel>).add(popularModel)
                     popularAdapters.notifyDataSetChanged()
 
                     Log.d(TAG, "${document.id} => ${document.data}")
