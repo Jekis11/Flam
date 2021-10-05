@@ -2,11 +2,9 @@ package com.example.flam
 
 
 import android.annotation.SuppressLint
-import android.app.PendingIntent.getActivity
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -14,12 +12,13 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flam.HauptModels.*
-import com.example.flam.adapter.PopularAdapters
+import com.example.flam.adapter.PopularAdapter
 import com.example.flam.databinding.ActivityHauptBinding
 import com.example.flam.models.PopularModel
 import com.google.android.material.navigation.NavigationView
@@ -28,17 +27,21 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_haupt.*
+import kotlin.collections.ArrayList
+import kotlin.collections.List
 import java.util.ArrayList as ArrayList1
+
 
 class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    lateinit var popularAdapters : PopularAdapters
-    var db = FirebaseFirestore.getInstance()
-    lateinit var popularModelList : List<PopularModel>
-    lateinit var popularRec : RecyclerView
+    private lateinit var popularAdapters : PopularAdapter
+    private var db = Firebase.firestore
+    private var popularModelList: List<PopularModel>? = null
+    private lateinit var popularRec : RecyclerView
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
+
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,8 +70,8 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         //Popular item
         popularRec = findViewById(R.id.pop_rec)
         popularRec.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        popularModelList = java.util.ArrayList()
-        popularAdapters = PopularAdapters(this,popularModelList)
+        popularModelList = ArrayList()
+        popularAdapters = PopularAdapter(this, popularModelList as ArrayList<PopularModel>)
         popularRec.adapter = popularAdapters
 
 
@@ -78,7 +81,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             .addOnSuccessListener { result ->
                 for (document in result) {
                     val popularModel = document.toObject(PopularModel::class.java)
-                    (popularModelList as java.util.ArrayList<PopularModel>).add(popularModel)
+                    popularModelList.add(popularModel)
                     popularAdapters.notifyDataSetChanged()
 
                     Log.d(TAG, "${document.id} => ${document.data}")
@@ -87,8 +90,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             .addOnFailureListener { exception ->
                Toast.makeText(this, "Error $exception",Toast.LENGTH_SHORT).show()
             }
-
-
 
 
         setUpTabbar()
