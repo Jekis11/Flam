@@ -3,10 +3,12 @@ package com.example.flam
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent.getActivity
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -23,15 +25,17 @@ import com.example.flam.models.PopularModel
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_haupt.*
 import java.util.ArrayList as ArrayList1
 
 class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var popularAdapters : PopularAdapters
+    val db = FirebaseFirestore.getInstance()
     lateinit var popularModelList : List<PopularModel>
     lateinit var popularRec : RecyclerView
-    lateinit var db : FirebaseFirestore
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
@@ -66,6 +70,22 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         popularAdapters = PopularAdapters(this,popularModelList)
         popularRec.adapter = popularAdapters
 
+
+
+        db.collection("PopularProducts")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val popularModel = document.toObject(PopularModel::class.java)
+                    (popularModelList as java.util.ArrayList<PopularModel>).add(popularModel)
+                    popularAdapters.notifyDataSetChanged()
+
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+               Toast.makeText(this, "Error $exception",Toast.LENGTH_SHORT).show()
+            }
 
 
 
