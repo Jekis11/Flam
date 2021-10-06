@@ -39,6 +39,7 @@
         android:background="@drawable/bg_button_rounded">
 
         <ImageView
+            android:id="@+id/back_tohome"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:padding="6dp"
@@ -84,11 +85,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <EditText
+                    style="@style/TextBlackTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Username"
-                    style="@style/TextBlackTitle"/>
+                    android:minHeight="48dp"
+                    android:text="Username" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -118,11 +120,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <EditText
+                    style="@style/TextBlackTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Phone"
-                    style="@style/TextBlackTitle"/>
+                    android:minHeight="48dp"
+                    android:text="Phone" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -152,11 +155,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <EditText
+                    style="@style/TextBlackTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Email"
-                    style="@style/TextBlackTitle"/>
+                    android:minHeight="48dp"
+                    android:text="Email" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -186,11 +190,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <EditText
+                    style="@style/TextBlackTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Address"
-                    style="@style/TextBlackTitle"/>
+                    android:minHeight="48dp"
+                    android:text="Address" />
 
                 <TextView
                     android:layout_width="match_parent"
