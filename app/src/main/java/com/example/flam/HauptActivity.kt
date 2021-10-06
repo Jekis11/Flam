@@ -20,9 +20,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.flam.HauptModels.*
 import com.example.flam.adapter.HomeAdapter
 import com.example.flam.adapter.PopularAdapter
+import com.example.flam.adapter.RecommendedAdapter
 import com.example.flam.databinding.ActivityHauptBinding
 import com.example.flam.models.HomeCategory
 import com.example.flam.models.PopularModel
+import com.example.flam.models.RecommendedModel
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -46,6 +48,11 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     private lateinit var homeCatRec: RecyclerView
     private var categoryList: List<HomeCategory>? = null
     private lateinit var homeAdapter: HomeAdapter
+
+    //Recommended items
+    private lateinit var recomCatRec: RecyclerView
+    private var recommededModelList: List<RecommendedModel>? = null
+    private lateinit var recomededAdapter: RecommendedAdapter
 
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
@@ -79,6 +86,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         //Popular  item and Home Category
         popularRec = findViewById(R.id.pop_rec)
         homeCatRec = findViewById(R.id.explore_rec)
+        recomCatRec = findViewById(R.id.recomended_rec)
 
 
 
@@ -122,6 +130,25 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 Toast.makeText(this, "Error $exception",Toast.LENGTH_SHORT).show()
             }
 
+        recomCatRec.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        recommededModelList = ArrayList()
+        recomededAdapter = RecommendedAdapter(this,  recommededModelList as ArrayList<RecommendedModel>)
+        recomCatRec.adapter =  recomededAdapter
+
+        db.collection("Recommended")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val recModel = document.toObject(RecommendedModel::class.java)
+                    ( recommededModelList as ArrayList<RecommendedModel>).add(recModel)
+                    recomededAdapter.notifyDataSetChanged()
+
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Error $exception",Toast.LENGTH_SHORT).show()
+            }
 
 
         setUpTabbar()
