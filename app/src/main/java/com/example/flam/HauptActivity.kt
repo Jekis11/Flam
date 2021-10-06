@@ -10,6 +10,8 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ProgressBar
+import android.widget.ScrollView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -57,6 +59,8 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
+    private lateinit var scrollView: ScrollView
+    private lateinit var progresssBar: ProgressBar
 
 
     @SuppressLint("NotifyDataSetChanged")
@@ -87,6 +91,11 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         popularRec = findViewById(R.id.pop_rec)
         homeCatRec = findViewById(R.id.explore_rec)
         recomCatRec = findViewById(R.id.recomended_rec)
+        scrollView  = findViewById(R.id.scrollview)
+        progresssBar = findViewById(R.id.progress_bar)
+
+        progresssBar.visibility = View.VISIBLE
+        scrollView.visibility = View.GONE
 
 
 
