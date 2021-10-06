@@ -18,8 +18,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flam.HauptModels.*
+import com.example.flam.adapter.HomeAdapter
 import com.example.flam.adapter.PopularAdapter
 import com.example.flam.databinding.ActivityHauptBinding
+import com.example.flam.models.HomeCategory
 import com.example.flam.models.PopularModel
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -41,7 +43,9 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     private lateinit var popularRec : RecyclerView
 
     //home category
-    private lateinit var homeCategory: RecyclerView
+    private lateinit var homeCatRec: RecyclerView
+    private var categoryList: List<HomeCategory>? = null
+    private lateinit var homeAdapter: HomeAdapter
 
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
@@ -72,16 +76,16 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         // override the onSupportNavigateUp() function to launch the Drawer when the hamburger icon is clicked
         //setting toolbar
         //home navigation
-        //Popular item
+        //Popular  item and Home Category
         popularRec = findViewById(R.id.pop_rec)
-        homeCategory = findViewById(R.id.explore_rec)
+        homeCatRec = findViewById(R.id.explore_rec)
+
+
 
         popularRec.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         popularModelList = ArrayList()
         popularAdapters = PopularAdapter(this, popularModelList as ArrayList<PopularModel>)
         popularRec.adapter = popularAdapters
-
-
 
         db.collection("PopularProducts")
             .get()
@@ -97,6 +101,27 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             .addOnFailureListener { exception ->
                Toast.makeText(this, "Error $exception",Toast.LENGTH_SHORT).show()
             }
+
+        homeCatRec.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        categoryList = ArrayList()
+        homeAdapter = HomeAdapter(this, categoryList as ArrayList<HomeCategory>)
+        homeCatRec.adapter = homeAdapter
+
+        db.collection("HomeCategory")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val home = document.toObject(HomeCategory::class.java)
+                    (categoryList as ArrayList<HomeCategory>).add(home)
+                    homeAdapter.notifyDataSetChanged()
+
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Error $exception",Toast.LENGTH_SHORT).show()
+            }
+
 
 
         setUpTabbar()
