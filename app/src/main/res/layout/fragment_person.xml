@@ -90,7 +90,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
-                    android:text="Username" />
+                    android:hint="Username"
+                    android:textColorHint="@color/Schwarz"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -125,7 +126,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
-                    android:text="Phone" />
+                    android:hint="Phone"
+                    android:textColorHint="@color/Schwarz"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -160,7 +162,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
-                    android:text="Email" />
+                    android:hint="Email"
+                    android:textColorHint="@color/Schwarz"
+                                                        />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -196,7 +200,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
-                    android:text="Address" />
+                    android:hint="Address"
+                    android:textColorHint="@color/Schwarz"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -211,14 +216,14 @@
         <Button
             android:id="@+id/buttonupdate"
             android:layout_width="147dp"
-            android:layout_gravity="center_vertical|center_horizontal"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginTop="10dp"
             android:background="@color/Orang"
-            android:textColor="@color/Weiss"
             android:padding="14dp"
             android:text="Update"
-            tools:ignore="HardcodedText">
+            android:textColor="@color/Weiss"
+            >
 
 
         </Button>

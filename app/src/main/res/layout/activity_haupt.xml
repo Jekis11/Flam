@@ -14,18 +14,12 @@
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <ProgressBar
-                android:id="@+id/progress_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                tools:ignore="ObsoleteLayoutParam" />
-
 
 
             //попробуем сюда вставить searchview
@@ -96,7 +90,7 @@
             </LinearLayout>
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="145dp"
+                android:layout_height="100dp"
                 android:layout_margin="5dp"
                 android:id="@+id/explore_rec"/>
 
@@ -140,6 +134,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"

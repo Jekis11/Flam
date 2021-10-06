@@ -59,8 +59,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
-    private lateinit var scrollView: ScrollView
-    private lateinit var progresssBar: ProgressBar
+
 
 
     @SuppressLint("NotifyDataSetChanged")
@@ -91,11 +90,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         popularRec = findViewById(R.id.pop_rec)
         homeCatRec = findViewById(R.id.explore_rec)
         recomCatRec = findViewById(R.id.recomended_rec)
-        scrollView  = findViewById(R.id.scrollview)
-        progresssBar = findViewById(R.id.progress_bar)
-
-        progresssBar.visibility = View.VISIBLE
-        scrollView.visibility = View.GONE
 
 
 
@@ -112,8 +106,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                     (popularModelList as ArrayList<PopularModel>).add(popularModel)
                     popularAdapters.notifyDataSetChanged()
 
-                    progresssBar.visibility = View.GONE
-                    scrollView.visibility = View.VISIBLE
 
                     Log.d(TAG, "${document.id} => ${document.data}")
                 }
@@ -154,6 +146,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                     val recModel = document.toObject(RecommendedModel::class.java)
                     ( recommededModelList as ArrayList<RecommendedModel>).add(recModel)
                     recomededAdapter.notifyDataSetChanged()
+
 
                     Log.d(TAG, "${document.id} => ${document.data}")
                 }

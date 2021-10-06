@@ -2,6 +2,7 @@ package com.example.flam.HauptModels
 
 
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,8 @@ import kotlinx.android.synthetic.main.fragment_contact.*
 class PersonFragment: Fragment(R.layout.fragment_person) {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
