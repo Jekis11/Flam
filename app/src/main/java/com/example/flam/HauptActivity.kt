@@ -34,10 +34,15 @@ import java.util.ArrayList as ArrayList1
 
 class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    //popular items
     private lateinit var popularAdapters : PopularAdapter
     private var db = Firebase.firestore
     private var popularModelList: List<PopularModel>? = null
     private lateinit var popularRec : RecyclerView
+
+    //home category
+    private lateinit var homeCategory: RecyclerView
+
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityHauptBinding
     private lateinit var user: FirebaseAuth
@@ -69,6 +74,8 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         //home navigation
         //Popular item
         popularRec = findViewById(R.id.pop_rec)
+        homeCategory = findViewById(R.id.explore_rec)
+
         popularRec.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         popularModelList = ArrayList()
         popularAdapters = PopularAdapter(this, popularModelList as ArrayList<PopularModel>)
