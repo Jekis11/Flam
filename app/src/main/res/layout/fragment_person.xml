@@ -191,6 +191,7 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/profileadress"
                     style="@style/TextBlackTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -207,6 +208,20 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/buttonupdate"
+            android:layout_width="147dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/Orang"
+            android:textColor="@color/Weiss"
+            android:padding="14dp"
+            android:text="Update"
+            tools:ignore="HardcodedText">
+
+
+        </Button>
     </LinearLayout>
 
 </LinearLayout>
