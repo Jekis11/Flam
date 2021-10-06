@@ -112,6 +112,9 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                     (popularModelList as ArrayList<PopularModel>).add(popularModel)
                     popularAdapters.notifyDataSetChanged()
 
+                    progresssBar.visibility = View.GONE
+                    scrollView.visibility = View.VISIBLE
+
                     Log.d(TAG, "${document.id} => ${document.data}")
                 }
             }
