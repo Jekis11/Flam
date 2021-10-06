@@ -193,6 +193,14 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             true
         }
 
+        R.id.profilechange -> {
+            val personFragment = PersonFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.framelayout, personFragment).commit()
+            true
+        }
+
+
         R.id.contactus -> {
             val contactFragment = ContactFragment()
             supportFragmentManager.beginTransaction()
@@ -311,6 +319,12 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         if(item.itemId == R.id.nav_homes){
             Toast.makeText(applicationContext,"HOME SCHEISSE", Toast.LENGTH_SHORT).show()
         }
+        if(item.itemId == R.id.nav_prifle){
+            val personFragment = PersonFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.framelayout, personFragment).commit()
+        }
+
         return true
     }
 
