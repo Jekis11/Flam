@@ -6,5 +6,5 @@ class RecommendedModel(
     var description: String?  = null,
     var rating: String?  = null,
     var img_url: String?  = null,
-    val price: Int? = null,
+    var discount: String?  = null,
 )

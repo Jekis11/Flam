@@ -47,7 +47,7 @@ class ViewPagerAdapter (supportFragmentManager: FragmentManager): FragmentPagerA
             container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            var rootView = LayoutInflater.from(context).inflate(R.layout.fragment_oigen,null, false)
+            val rootView = LayoutInflater.from(context).inflate(R.layout.fragment_oigen,null, false)
             return rootView
         }
     }

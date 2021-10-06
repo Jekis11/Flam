@@ -27,6 +27,7 @@ class RecommendedAdapter(
         Glide.with(context).load(list[position].img_url).into(holder.recImg)
         holder.name.text = list[position].name
         holder.description.text = list[position].description
+        holder.discount.text = list[position].discount
         holder.rating.text = list[position].rating
 
 
@@ -41,6 +42,7 @@ class RecommendedAdapter(
         var name: TextView = itemView.findViewById(R.id.rec_name)
         var description: TextView = itemView.findViewById(R.id.rec_desc)
         var rating: TextView = itemView.findViewById(R.id.rec_rating)
+        var discount: TextView = itemView.findViewById(R.id.discount)
 
 
     }
