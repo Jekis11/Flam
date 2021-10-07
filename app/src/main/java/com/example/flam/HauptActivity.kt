@@ -270,14 +270,14 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 R.id.nav_contact -> {
                     val contactFragment = ContactFragment()
                     supportFragmentManager.beginTransaction()
-                            .replace(R.id.framelayout, contactFragment).commit()
+                            .replace(R.id.framelayout, contactFragment).addToBackStack(null).commit()
                     viewpager.currentItem = 1
 
                 }
                 R.id.nav_person -> {
                     val navpersont = PersonFragment()
                     supportFragmentManager.beginTransaction()
-                            .replace(R.id.framelayout, navpersont).commit()
+                            .replace(R.id.framelayout, navpersont).addToBackStack(null).commit()
                     viewpager.currentItem = 2
 
 
@@ -286,7 +286,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 R.id.nav_settings -> {
                     val settingsFragment = SettingsFragment()
                     supportFragmentManager.beginTransaction()
-                            .replace(R.id.framelayout, settingsFragment).commit()
+                            .replace(R.id.framelayout, settingsFragment).addToBackStack(null).commit()
                     viewpager.currentItem = 3
                     binding.navbar.showBadge(R.id.nav_settings, 10000)
 
