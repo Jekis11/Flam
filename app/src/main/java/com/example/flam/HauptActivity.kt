@@ -198,7 +198,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             val contactFragment = ContactFragment()
             supportFragmentManager.beginTransaction()
                 .replace(R.id.framelayout, contactFragment).commit()
-            Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Go to Contact",Toast.LENGTH_LONG).show()
             true
         }
 

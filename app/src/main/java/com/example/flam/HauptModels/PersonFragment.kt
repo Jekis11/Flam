@@ -16,7 +16,8 @@ class PersonFragment: Fragment(R.layout.fragment_person) {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        val rootView = inflater.inflate(R.layout.fragment_person, container, false)
+        return rootView
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

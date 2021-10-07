@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:descendantFocusability="blocksDescendants"
     android:orientation="vertical"
+    android:background="@color/Weiss"
     tools:context=".HauptModels.ContactFragment">
 
 

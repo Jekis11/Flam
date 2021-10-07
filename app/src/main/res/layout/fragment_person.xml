@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/Weiss"
     tools:context=".HauptModels.PersonFragment">
 
     <LinearLayout
@@ -164,7 +165,7 @@
                     android:minHeight="48dp"
                     android:hint="Email"
                     android:textColorHint="@color/Schwarz"
-                                                        />
+                    />
 
                 <TextView
                     android:layout_width="match_parent"
