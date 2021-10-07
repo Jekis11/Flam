@@ -155,7 +155,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 Toast.makeText(this, "Error $exception",Toast.LENGTH_SHORT).show()
             }
 
-
         setUpTabbar()
     }
 
@@ -291,6 +290,9 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                     viewpager.currentItem = 3
                     binding.navbar.showBadge(R.id.nav_settings, 10000)
 
+
+
+
                 }
             }
         }
@@ -317,7 +319,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             supportFragmentManager.beginTransaction()
                 .replace(R.id.framelayout, personFragment).commit()
         }
-
         return true
     }
 
