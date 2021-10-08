@@ -11,7 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.flam.R
 import com.example.flam.databinding.FragmentPersonBinding
@@ -24,7 +23,7 @@ import com.google.firebase.storage.StorageReference
 
 
 
-class PersonFragment: Fragment(R.layout.fragment_person) {
+class PersonFragment(val packageName: String) : Fragment(R.layout.fragment_person) {
 
     private lateinit var binding: PersonFragment
     private lateinit var auth: FirebaseAuth
@@ -74,7 +73,7 @@ class PersonFragment: Fragment(R.layout.fragment_person) {
 
     private fun uploadProfilePic() {
 
-        imageUri = Uri.parse("android.resource:/$packageName/${R.drawable.drums}")
+        val uri: Uri = Uri.parse("android.resource://$packageName/${R.drawable.cat}")
 
         storageReference = FirebaseStorage.getInstance().getReference("Users/"+auth.currentUser?.uid)
         storageReference.putFile(imageUri).addOnSuccessListener {
