@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flam">
         <activity
+            android:name=".CategoryActivity"
+            android:exported="true" />
+        <activity
             android:name=".adapter.ConvertActivity"
             android:exported="true" />
         <activity
