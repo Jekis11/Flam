@@ -41,7 +41,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="190dp">
+            android:layout_height="150dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -61,11 +61,89 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EXPAND ALL"
+                    android:layout_alignParentBottom="true"
                     android:background="#0000000"
                     android:padding="20dp"
+                    android:text="EXPAND ALL"
+                    android:textColor="@color/Weiss" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="-10dp"
+                android:src="@drawable/pop" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/bk2">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/keys"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/black"
+                android:padding="25dp"
+                android:text="Keys"
+                android:textColor="@color/Schwarz"
+                android:textSize="30sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#0000000"
+                android:padding="20dp"
+                android:layout_alignParentRight="true"
+                android:text="EXPAND ALL"
+                android:textColor="@color/Schwarz" />
+
+
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/bk3"
+                android:layout_margin="5dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:text="Guitar"
                     android:textColor="@color/Weiss"
-                    android:layout_alignParentBottom="true"/>
+                    android:fontFamily="@font/black"
+                    android:padding="25dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="#0000000"
+                    android:padding="20dp"
+                    android:text="EXPAND ALL"
+                    android:textColor="@color/Weiss" />
 
 
 
@@ -77,11 +155,131 @@
             </RelativeLayout>
 
             <ImageView
+                android:layout_width="135dp"
+                android:layout_height="135dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/sad" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/bk6">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/keys"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/black"
+                android:padding="25dp"
+                android:text="Wind"
+                android:textColor="@color/Schwarz"
+                android:textSize="30sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#0000000"
+                android:padding="20dp"
+                android:layout_alignParentRight="true"
+                android:text="EXPAND ALL"
+                android:textColor="@color/Schwarz" />
+
+
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bk4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/black"
+                    android:padding="25dp"
+                    android:text="Tradition"
+                    android:textColor="@color/Schwarz"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="#0000000"
+                    android:padding="20dp"
+                    android:text="EXPAND ALL"
+                    android:textColor="@color/Schwarz" />
+
+            </RelativeLayout>
+
+            <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="-10dp"
                 android:src="@drawable/pop" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/bk5">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/keys"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/black"
+                android:padding="25dp"
+                android:text="Studio"
+                android:textColor="@color/Weiss"
+                android:textSize="30sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#0000000"
+                android:padding="20dp"
+                android:layout_alignParentRight="true"
+                android:text="EXPAND ALL"
+                android:textColor="@color/Weiss" />
+
+
+
+
+
 
         </RelativeLayout>
 
