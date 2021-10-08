@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/Weiss"
-    tools:context=".PersonFragment">
+    tools:context=".HauptModels.PersonFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
