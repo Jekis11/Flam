@@ -55,10 +55,13 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'com.google.firebase:firebase-analytics-ktx:19.0.1'
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
+    implementation 'com.google.firebase:firebase-database:20.0.2'
+    implementation 'com.google.firebase:firebase-storage:20.0.0'
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation files('libs\\libs\\YouTubeAndroidPlayerApi.jar')
     implementation 'com.google.firebase:firebase-firestore-ktx:23.0.4'
+    implementation 'androidx.databinding:databinding-runtime:7.0.2'
 
 
     testImplementation 'junit:junit:4.13.2'
@@ -99,6 +102,9 @@ dependencies {
 
     //12 Library recyclerview
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    //12 Library ProgressDialog
+    implementation 'com.jpardogo.googleprogressbar:library:1.2.0'
 
 }
 

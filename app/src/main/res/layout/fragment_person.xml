@@ -87,6 +87,7 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/nameperson"
                     style="@style/TextBlackTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -123,6 +124,7 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/phoneperson"
                     style="@style/TextBlackTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -159,6 +161,7 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/emaulperson"
                     style="@style/TextBlackTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
