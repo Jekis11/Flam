@@ -74,7 +74,8 @@ class PersonFragment: Fragment(R.layout.fragment_person) {
 
     private fun uploadProfilePic() {
 
-        imageUri = Uri.parse("android.resource://$pack/${R.drawable.drums}")
+        imageUri = Uri.parse("android.resource:/$packageName/${R.drawable.drums}")
+
         storageReference = FirebaseStorage.getInstance().getReference("Users/"+auth.currentUser?.uid)
         storageReference.putFile(imageUri).addOnSuccessListener {
             hideProgressBar()
