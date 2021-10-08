@@ -37,43 +37,55 @@
             android:fontFamily="@font/black"
             android:padding="10dp"
             android:textAllCaps="true"/>
-        
+
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/bk1"
-            >
-            
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:text="Drums"
-                android:textColor="@color/Weiss"
-                android:fontFamily="@font/black"
-                android:padding="25dp"/>
+            android:layout_height="190dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/bk1"
+                android:layout_margin="5dp"
+                >
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="EXPAND ALL"
-                android:background="#0000000"
-                android:padding="20dp"
-                android:textColor="@color/Weiss"
-                android:layout_alignParentBottom="true"/>
-            
-            
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:text="Drums"
+                    android:textColor="@color/Weiss"
+                    android:fontFamily="@font/black"
+                    android:padding="25dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EXPAND ALL"
+                    android:background="#0000000"
+                    android:padding="20dp"
+                    android:textColor="@color/Weiss"
+                    android:layout_alignParentBottom="true"/>
+
+
+
+
+
+
+
+
+            </RelativeLayout>
+
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src=""
-                android:layout_alignParentRight="true"/>
-
-
-
-
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="-10dp"
+                android:src="@drawable/pop" />
 
         </RelativeLayout>
+
+
 
 
 
