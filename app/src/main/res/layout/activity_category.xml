@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3C00E5FF"
+    android:background="#2200E5FF"
     tools:context=".CategoryActivity"
     tools:ignore="SpeakableTextPresentCheck">
 
@@ -62,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:background="#0000000"
+                    android:background="#00000000"
                     android:padding="20dp"
                     android:text="EXPAND ALL"
                     android:textColor="@color/Weiss" />
@@ -78,44 +78,45 @@
 
         </RelativeLayout>
 
+
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_margin="4dp"
-            android:background="@drawable/bk2">
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bk2">
 
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/keys"
-                android:layout_marginLeft="20dp" />
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/keys"
+                    android:layout_marginLeft="20dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:fontFamily="@font/black"
-                android:padding="25dp"
-                android:text="Keys"
-                android:textColor="@color/Schwarz"
-                android:textSize="30sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/black"
+                    android:padding="25dp"
+                    android:text="Keys"
+                    android:textColor="@color/Schwarz"
+                    android:textSize="30sp" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="#0000000"
-                android:padding="20dp"
-                android:layout_alignParentRight="true"
-                android:text="EXPAND ALL"
-                android:textColor="@color/Schwarz" />
-
-
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00000000"
+                    android:padding="20dp"
+                    android:layout_alignParentRight="true"
+                    android:text="EXPAND ALL"
+                    android:textColor="@color/Schwarz" />
 
 
 
 
-        </RelativeLayout>
+
+
+            </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -140,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:background="#0000000"
+                    android:background="#00000000"
                     android:padding="20dp"
                     android:text="EXPAND ALL"
                     android:textColor="@color/Weiss" />
@@ -189,7 +190,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:background="#0000000"
+                android:background="#00000000"
                 android:padding="20dp"
                 android:layout_alignParentRight="true"
                 android:text="EXPAND ALL"
@@ -228,7 +229,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:background="#0000000"
+                    android:background="#00000000"
                     android:padding="20dp"
                     android:text="EXPAND ALL"
                     android:textColor="@color/Schwarz" />
@@ -270,7 +271,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:background="#0000000"
+                android:background="#00000000"
                 android:padding="20dp"
                 android:layout_alignParentRight="true"
                 android:text="EXPAND ALL"
@@ -279,15 +280,7 @@
 
 
 
-
-
         </RelativeLayout>
-
-
-
-
-
-
 
 
     </LinearLayout>
