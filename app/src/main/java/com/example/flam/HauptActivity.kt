@@ -61,6 +61,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
 
 
+
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,7 +70,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         user = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
         setSupportActionBar(findViewById(R.id.toolbar))
-
+        var isCheckedDone = false
         val drawer : DrawerLayout =findViewById(R.id.drawerlayout)
         val navView :  NavigationView = findViewById(R.id.navigationbar)
         val drawerToggle:ActionBarDrawerToggle = object : ActionBarDrawerToggle(
