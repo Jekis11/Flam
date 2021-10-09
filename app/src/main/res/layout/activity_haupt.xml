@@ -33,19 +33,21 @@
                     app:fab_labelsPosition="left">
 
                     <com.getbase.floatingactionbutton.FloatingActionButton
+                       android:id="@+id/floatingemaileins"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:fab_colorNormal="#FFF"
-                        app:fab_icon="@drawable/ic_email"
-                        app:fab_title="faf" />
+                        app:fab_icon="@drawable/ic_baseline_message_24"
+                        app:fab_title="Email Store" />
 
                     <com.getbase.floatingactionbutton.FloatingActionButton
+                       android:id="@+id/floatinemailzwei"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:fab_colorNormal="#FFF"
                         app:fab_icon="@drawable/emailblack"
                         app:fab_size="mini"
-                        app:fab_title="faf" />
+                        app:fab_title="Report bug" />
 
 
 

@@ -155,6 +155,18 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             }
 
         setUpTabbar()
+
+
+        floatingemaileins.setOnClickListener{
+            val emailintent = Intent(Intent.ACTION_SENDTO,
+                Uri.fromParts("mailto","kogyxar94@gmail.com",null))
+            startActivity(Intent.createChooser(emailintent,"Send Report Bug Email..."))
+        }
+        floatinemailzwei.setOnClickListener{
+            val emailintent = Intent(Intent.ACTION_SENDTO,
+                Uri.fromParts("mailto","kogyxar94@gmail.com",null))
+            startActivity(Intent.createChooser(emailintent,"Send Message please..."))
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
