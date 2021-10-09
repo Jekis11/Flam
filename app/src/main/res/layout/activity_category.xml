@@ -20,6 +20,7 @@
             android:layout_height="?actionBarSize">
 
             <ImageView
+                android:id="@+id/backpressed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -91,15 +92,15 @@
                     android:src="@drawable/keys"
                     android:layout_marginLeft="20dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:fontFamily="@font/black"
-                    android:padding="25dp"
-                    android:text="Keys"
-                    android:textColor="@color/Schwarz"
-                    android:textSize="30sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/black"
+                android:padding="25dp"
+                android:text="Keys"
+                android:textColor="@color/Weiss"
+                android:textSize="30sp" />
 
                 <Button
                     android:layout_width="wrap_content"
