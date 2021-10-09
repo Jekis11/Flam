@@ -253,7 +253,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             finish()
             true
         }
-        R.id.nav_settings -> {
+        R.id.action_drei-> {
             val settingsFragment = com.example.flam.HauptModels.SettingsFragment()
             supportFragmentManager.beginTransaction()
                 .replace(com.example.flam.R.id.framelayout, settingsFragment).commit()
