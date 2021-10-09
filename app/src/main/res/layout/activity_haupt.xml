@@ -17,6 +17,47 @@
             android:orientation="vertical"
             tools:ignore="ExtraText">
 
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.getbase.floatingactionbutton.FloatingActionsMenu
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="60dp"
+                    app:fab_labelStyle="@style/LabelStyle"
+                    app:fab_labelsPosition="left">
+
+                    <com.getbase.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fab_colorNormal="#FFF"
+                        app:fab_icon="@drawable/ic_email"
+                        app:fab_title="faf" />
+
+                    <com.getbase.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fab_colorNormal="#FFF"
+                        app:fab_icon="@drawable/emailblack"
+                        app:fab_size="mini"
+                        app:fab_title="faf" />
+
+
+
+
+                </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+            </RelativeLayout>
+
+
+
+
+
             //попробуем сюда вставить searchview
 
             <LinearLayout

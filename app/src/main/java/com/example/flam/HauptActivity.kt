@@ -201,8 +201,8 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         }
 
         R.id.privacypolicy -> {
-            val url = Uri.parse("https://docs.google.com/document/d/1aEftqMz_lqwFD9ku2csCqc4CU_yDTAPg-NII3ajfnGM/edit")
-            val intent = Intent(Intent.ACTION_VIEW, url)
+            val urdl = Uri.parse("https://docs.google.com/document/d/1aEftqMz_lqwFD9ku2csCqc4CU_yDTAPg-NII3ajfnGM/edit")
+            val intent = Intent(Intent.ACTION_VIEW, urdl)
             startActivity(intent)
             true
         }
@@ -321,6 +321,16 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         if(item.itemId == R.id.nav_category){
            startActivity(Intent(this,CategoryActivity::class.java))
         }
+
+        if(item.itemId == R.id.nav_logout){
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
+            Toast.makeText(this,"Bis bald, danke!",Toast.LENGTH_LONG).show()
+            finish()
+        }
+
+
 
         return true
     }

@@ -103,8 +103,11 @@ dependencies {
     //12 Library recyclerview
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
-    //12 Library ProgressDialog
+    //13 Library ProgressDialog Google
     implementation 'com.jpardogo.googleprogressbar:library:1.2.0'
+
+    //14 Library Floating Buttom
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
 
 }
 
