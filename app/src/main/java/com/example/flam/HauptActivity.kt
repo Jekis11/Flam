@@ -253,10 +253,15 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             finish()
             true
         }
+        R.id.nav_settings -> {
+            val settingsFragment = com.example.flam.HauptModels.SettingsFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(com.example.flam.R.id.framelayout, settingsFragment).commit()
+            true
+        }
 
-
-        R.id.home ->{
-            Toast.makeText(this,"Home action",Toast.LENGTH_LONG).show()
+        R.id.home -> {
+            startActivity(Intent(this,HauptActivity::class.java))
             true
         }
 
@@ -342,7 +347,11 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             Toast.makeText(this,"Bis bald, danke!",Toast.LENGTH_LONG).show()
             finish()
         }
-
+        if(item.itemId == R.id.nav_settings){
+            val settingsFragment = SettingsFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.framelayout, settingsFragment).commit()
+             }
 
 
         return true
