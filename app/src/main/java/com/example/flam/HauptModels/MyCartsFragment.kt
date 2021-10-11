@@ -10,7 +10,7 @@ import com.example.flam.R
 import com.example.flam.databinding.FragmentPersonBinding
 
 
-class NewProductsFragment : Fragment(R.layout.fragment_new_products) {
+class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
