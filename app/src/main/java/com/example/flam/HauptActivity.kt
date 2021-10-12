@@ -353,6 +353,22 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 .replace(R.id.framelayout, settingsFragment).commit()
              }
 
+        if(item.itemId == R.id.newproducts){
+            val newproductsFragment = NewProductsFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.framelayout, newproductsFragment).commit()
+        }
+        if(item.itemId == R.id.myorders){
+            val myordersFragment = MyOrdersFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.framelayout, myordersFragment).commit()
+        }
+        if(item.itemId == R.id.mycarts){
+            val mycartsFragment = MyCartsFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.framelayout, mycartsFragment).commit()
+        }
+
 
         return true
     }
