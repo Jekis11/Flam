@@ -63,7 +63,6 @@
 
 
 
-
             <ImageView
                 android:src="@drawable/ic_baseline_keyboard_double_arrow_right_24"
                 android:layout_width="wrap_content"
@@ -72,13 +71,9 @@
                 android:layout_marginTop="14dp"
                 android:layout_marginRight="5dp"
                 android:id="@+id/back"/>
-
-
-
-
-
-
         </LinearLayout>
+
+
 
     </LinearLayout>
 
