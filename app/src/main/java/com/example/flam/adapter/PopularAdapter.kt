@@ -1,14 +1,18 @@
 package com.example.flam.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.flam.CategoryActivity
 import com.example.flam.R
+import com.example.flam.ViewAllActivity
 import com.example.flam.models.PopularModel
 
 class PopularAdapter(
@@ -28,6 +32,13 @@ class PopularAdapter(
         holder.rating.text = popularModelList[position].rating
         holder.description.text = popularModelList[position].description
         holder.discount.text = popularModelList[position].discount
+
+        holder.itemView.setOnClickListener {
+           val intents = Intent(context,ViewAllActivity::class.java)
+            intents.putExtra("type",popularModelList[position].type)
+            context.startActivity(intents)
+
+        }
     }
 
     override fun getItemCount(): Int {
