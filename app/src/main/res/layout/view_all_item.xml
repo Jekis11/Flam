@@ -18,7 +18,7 @@
             android:src="@drawable/drums"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:scaleType="centerInside"
+            android:scaleType="centerCrop"
             android:id="@+id/imageview"/>
 
 
@@ -106,10 +106,10 @@
 
             <ImageView
                 android:src="@drawable/ic_baseline_keyboard_double_arrow_right_24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="end"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="-4dp"
                 android:layout_marginRight="5dp"
                 android:id="@+id/back"/>
 
