@@ -73,7 +73,7 @@ class PersonFragment() : Fragment(R.layout.fragment_person) {
 
     private fun uploadProfilePic() {
 
-      //  val uri: Uri = Uri.parse("android.resource://$packageName/${R.drawable.cat}")
+        val uri: Uri = Uri.parse("android.resource://$context.packageName/${R.drawable.cat}")
 
         storageReference = FirebaseStorage.getInstance().getReference("Users/"+auth.currentUser?.uid)
         storageReference.putFile(imageUri).addOnSuccessListener {
