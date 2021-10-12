@@ -30,16 +30,17 @@
             android:layout_marginLeft="10dp">
 
             <TextView
-
                 android:id="@+id/nav_cat_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
-                android:textSize="24sp"
+                android:layout_marginLeft="10dp"
                 android:fontFamily="@font/bold"
-                android:textColor="@color/Schwarz"/>
+                android:text="Name"
+                android:textColor="@color/Schwarz"
+                android:textSize="24sp" />
 
             <TextView
+                android:layout_marginLeft="10dp"
                 android:id="@+id/nav_cat_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,6 +55,7 @@
                 android:orientation="horizontal"
                 >
                 <TextView
+                    android:layout_marginLeft="10dp"
                     android:id="@+id/nav_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -102,20 +104,15 @@
 
             </LinearLayout>
 
-
-
-
-
-
-
             <ImageView
                 android:src="@drawable/ic_baseline_keyboard_double_arrow_right_24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="5dp"
                 android:id="@+id/back"/>
+
         </LinearLayout>
 
 
