@@ -52,5 +52,68 @@ class ViewAllActivity : AppCompatActivity() {
                 }
         }
 
+
+        if(type != null && type.equals("studio")){
+            db.collection("AllProducts").whereEqualTo("type","studio")
+                .get()
+                .addOnSuccessListener { result ->
+                    for (document in result) {
+                        val viewr = document.toObject(ViewAll::class.java)
+                        (viewAllList as ArrayList<ViewAll>).add(viewr)
+                        viewAllAdapter.notifyDataSetChanged()
+
+                    }
+                }
+
+            if(type != null && type.equals("drum")){
+                db.collection("AllProducts").whereEqualTo("type","drum")
+                    .get()
+                    .addOnSuccessListener { result ->
+                        for (document in result) {
+                            val viewr = document.toObject(ViewAll::class.java)
+                            (viewAllList as ArrayList<ViewAll>).add(viewr)
+                            viewAllAdapter.notifyDataSetChanged()
+
+                        }
+                    }
+        }
+
+            if(type != null && type.equals("traditional")){
+                db.collection("AllProducts").whereEqualTo("type","traditional")
+                    .get()
+                    .addOnSuccessListener { result ->
+                        for (document in result) {
+                            val viewr = document.toObject(ViewAll::class.java)
+                            (viewAllList as ArrayList<ViewAll>).add(viewr)
+                            viewAllAdapter.notifyDataSetChanged()
+
+                        }
+                    }
+            }
+            if(type != null && type.equals("wind")){
+                db.collection("AllProducts").whereEqualTo("type","wind")
+                    .get()
+                    .addOnSuccessListener { result ->
+                        for (document in result) {
+                            val viewr = document.toObject(ViewAll::class.java)
+                            (viewAllList as ArrayList<ViewAll>).add(viewr)
+                            viewAllAdapter.notifyDataSetChanged()
+
+                        }
+                    }
+            }
+            if(type != null && type.equals("guitar")){
+                db.collection("AllProducts").whereEqualTo("type","guitar")
+                    .get()
+                    .addOnSuccessListener { result ->
+                        for (document in result) {
+                            val viewr = document.toObject(ViewAll::class.java)
+                            (viewAllList as ArrayList<ViewAll>).add(viewr)
+                            viewAllAdapter.notifyDataSetChanged()
+
+                        }
+                    }
+            }
     }
+}
 }
