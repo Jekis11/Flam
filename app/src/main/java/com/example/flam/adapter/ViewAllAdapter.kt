@@ -30,7 +30,7 @@ class ViewAllAdapter(
         holder.name.text = List[position].name
         holder.rating.text = List[position].rating
         holder.description.text =List[position].description
-        holder.price.text = List[position].price +"€"
+        holder.price.text ="€" + List[position].price
     }
 
     override fun getItemCount(): Int {
