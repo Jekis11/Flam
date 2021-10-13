@@ -31,6 +31,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.pixplicity.generate.Rate
 import kotlinx.android.synthetic.main.activity_haupt.*
 import kotlin.collections.ArrayList
 import kotlin.collections.List
@@ -368,10 +369,14 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             supportFragmentManager.beginTransaction()
                 .replace(R.id.framelayout, mycartsFragment).commit()
         }
+        if(item.itemId == R.id.rateus){
 
+        }
 
         return true
     }
 
+
 }
+
 

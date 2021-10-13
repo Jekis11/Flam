@@ -109,11 +109,15 @@ dependencies {
     //14 Library Floating Buttom
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
+    //14 Library Rate Us
+
+
 }
 
 allprojects {
     repositories {
         google()
         mavenCentral()
+
     }
 }

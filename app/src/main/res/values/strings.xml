@@ -1,16 +1,18 @@
-<resources>
-    <string name="app_name">Flam</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="MissingTranslation">Flam</string>
     <string name="facebook_application_id" translatable="false">1063568384411530</string>
     <string name="facebook_login_protocol_scheme" translatable="false">fb1063568384411530</string>
 
     <string name="twitter_consumer_key" translatable="false">pl4hz1nERf5mRwO72GNqEYuOc</string>
     <string name="twitter_consumer_secret" translatable="false">sQeo75eukVhqDxgqm9TuYqnGkClritsAayhJ3hqVyq3c4JNhGp</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_maps">MapsActivity</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_maps" translatable="false">MapsActivity</string>
 
-    <string name="open">Open</string>
-    <string name="close">Close</string>
-    <string name="apikeyyoutube"> AIzaSyCh3p_c0SLUzSwC0GjQrgJN1APPiZ4no-c</string>
+    <string name="open" translatable="false">Open</string>
+    <string name="close" translatable="false">Close</string>
+    <string name="apikeyyoutube" translatable="false"> AIzaSyCh3p_c0SLUzSwC0GjQrgJN1APPiZ4no-c</string>
+
+
 
 </resources>
