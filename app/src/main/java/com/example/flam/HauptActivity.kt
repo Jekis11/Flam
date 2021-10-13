@@ -373,7 +373,20 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             startActivity(Intent(this,RateUs::class.java))
 
         }
+        if(item.itemId == R.id.share){
 
+            val shareBody ="Download project on Play Store : https://play.google.com/store/apps/details?id=com.activision.callofduty.shooter&hl=ru&gl=US"
+            val shareSub = "Flam : make life better"
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSub)
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody)
+
+            startActivity(shareIntent)
+
+
+
+        }
         return true
     }
 
