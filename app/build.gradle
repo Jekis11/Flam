@@ -110,7 +110,7 @@ dependencies {
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
     //14 Library Rate Us
-    implementation 'com.suddenh4x.ratingdialog:awesome-app-rating:2.4.0'
+    implementation 'com.stepstone.apprating:app-rating:2.3.1'
 }
 
 

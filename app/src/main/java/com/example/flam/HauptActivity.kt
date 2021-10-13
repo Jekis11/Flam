@@ -31,7 +31,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.stepstone.apprating.AppRatingDialog
 import kotlinx.android.synthetic.main.activity_haupt.*
+import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.List
 import java.util.ArrayList as ArrayList1
@@ -369,11 +371,13 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 .replace(R.id.framelayout, mycartsFragment).commit()
         }
         if(item.itemId == R.id.rateus){
+            startActivity(Intent(this,RateUs::class.java))
 
         }
 
         return true
     }
+
 
 
 }
