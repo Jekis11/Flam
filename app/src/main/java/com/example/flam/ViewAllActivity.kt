@@ -56,7 +56,6 @@ class ViewAllActivity : AppCompatActivity() {
                 }
         }
 
-
         if(type != null && type.equals("studio")){
             db.collection("AllProducts").whereEqualTo("type","studio")
                 .get()
