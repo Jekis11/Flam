@@ -31,7 +31,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.pixplicity.generate.Rate
 import kotlinx.android.synthetic.main.activity_haupt.*
 import kotlin.collections.ArrayList
 import kotlin.collections.List
