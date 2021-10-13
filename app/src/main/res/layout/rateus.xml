@@ -13,9 +13,9 @@
         <dev.yuganshtyagi.smileyrating.SmileyRatingView
             android:id="@+id/smiley_view"
             android:layout_width="match_parent"
-            android:layout_centerHorizontal="true"
             android:layout_height="400dp"
-            app:default_rating="1"/>
+            android:layout_centerHorizontal="true"
+            app:default_rating="1" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,12 +44,25 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_below="@id/rating_bar"
-            android:layout_margin="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/button_accept"
             android:hint="Write your Review"
             android:padding="12dp" />
 
+        <EditText
+            android:id="@+id/editTextMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="630dp"
+            android:text="kogyxar94@gmail.com"
+            android:gravity="center"
+            />
+
         <Button
+            android:id="@+id/buttonsubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/review_box"
@@ -59,9 +72,9 @@
             android:layout_marginBottom="24dp"
             android:background="@color/Orang"
             android:elevation="4dp"
-            android:text="Submit"
             android:fontFamily="@font/bold"
-            android:textColor="@color/Weiss"/>
+            android:text="Submit"
+            android:textColor="@color/Weiss" />
     </RelativeLayout>
 
 </ScrollView>
