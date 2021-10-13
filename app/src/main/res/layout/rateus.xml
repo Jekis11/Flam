@@ -52,14 +52,7 @@
             android:hint="Write your Review"
             android:padding="12dp" />
 
-        <EditText
-            android:id="@+id/editTextMail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="630dp"
-            android:text="kogyxar94@gmail.com"
-            android:gravity="center"
-            />
+
 
         <Button
             android:id="@+id/buttonsubmit"
