@@ -110,13 +110,14 @@ dependencies {
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
     //14 Library Rate Us
-    implementation 'com.stepstone.apprating:app-rating:2.3.1'
+    implementation  'com.github.YuganshT79:Smiley-Rating:1.0.2'
 }
 
 
 allprojects {
     repositories {
         google()
+        maven { url 'https://jitpack.io' }
         mavenCentral()
 
     }
