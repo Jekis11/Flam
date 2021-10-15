@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/drawable/bg_button_rounded.xml" value="0.21354166666666666" />
+        <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/drawable/bg_iv.xml" value="0.21354166666666666" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/drawable/bg_label.xml" value="0.19791666666666666" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/drawable/bg_top.xml" value="0.21354166666666666" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/drawable/big_circle.xml" value="0.21354166666666666" />
@@ -50,6 +51,7 @@
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/border.xml" value="0.19739583333333333" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/chipbutton.xml" value="0.19739583333333333" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/content_haupt.xml" value="0.22" />
+        <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/customdialoggetlink.xml" value="0.25" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/dialog_wait.xml" value="0.19739583333333333" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/drawerlayout.xml" value="0.1578125" />
         <entry key="..\:/Studium/5 KURS/DIPLOM/Flam/app/src/main/res/layout/fragment_account.xml" value="0.19739583333333333" />

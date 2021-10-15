@@ -12,6 +12,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -32,6 +33,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_haupt.*
+import kotlinx.android.synthetic.main.customdialoggetlink.view.*
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.List
@@ -383,12 +385,25 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody)
 
             startActivity(shareIntent)
+        }
 
-
+        if(item.itemId == R.id. getlink){
+            val view = View.inflate(this@HauptActivity, R.layout.customdialoggetlink,null)
+                val builder = AlertDialog.Builder(this@HauptActivity)
+                builder.setView(view)
+            val dialog = builder.create()
+            dialog.show()
+            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+            view.btn_confirm.setOnClickListener {
+                dialog.dismiss()
+            }
 
         }
+
+
         return true
     }
+
 
 
 
