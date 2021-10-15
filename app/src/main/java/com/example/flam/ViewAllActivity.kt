@@ -3,6 +3,7 @@ package com.example.flam
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,9 +21,9 @@ class ViewAllActivity : AppCompatActivity() {
 
     private lateinit var viewAllAdapter: ViewAllAdapter
     private var db = Firebase.firestore
-    private lateinit var toolbarr : androidx.appcompat.widget.Toolbar
+    private lateinit var toolbar : androidx.appcompat.widget.Toolbar
     private var viewAllList: List<ViewAll>? = null
-    private lateinit var viewAll : RecyclerView
+    private lateinit var recyclerView : RecyclerView
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,93 +31,105 @@ class ViewAllActivity : AppCompatActivity() {
         setContentView(R.layout.activity_view_all)
         db = FirebaseFirestore.getInstance()
         val type = intent.getStringExtra("type")
-        viewAll = findViewById(R.id.view_all_rec)
-        toolbarr = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbarr)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        recyclerView = findViewById(R.id.view_all_rec)
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
 
 
 
-        viewAll.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
+        recyclerView.layoutManager = LinearLayoutManager(this)
         viewAllList = ArrayList()
         viewAllAdapter = ViewAllAdapter(this, viewAllList as ArrayList<ViewAll>)
-        viewAll.adapter = viewAllAdapter
+        recyclerView.adapter = viewAllAdapter
 
 
-        if(type != null && type.equals("keys")){
+        if(type != null && type == "keys"){
             db.collection("AllProducts").whereEqualTo("type","keys")
                 .get()
                 .addOnSuccessListener { result ->
                     for (document in result) {
-                        val viewr = document.toObject(ViewAll::class.java)
-                        (viewAllList as ArrayList<ViewAll>).add(viewr)
+                        val keys = document.toObject(ViewAll::class.java)
+                        (viewAllList as ArrayList<ViewAll>).add(keys)
                         viewAllAdapter.notifyDataSetChanged()
 
                     }
                 }
         }
 
-        if(type != null && type.equals("studio")){
+        if(type != null && type == "studio"){
             db.collection("AllProducts").whereEqualTo("type","studio")
                 .get()
                 .addOnSuccessListener { result ->
                     for (document in result) {
-                        val viewr = document.toObject(ViewAll::class.java)
-                        (viewAllList as ArrayList<ViewAll>).add(viewr)
+                        val studio = document.toObject(ViewAll::class.java)
+                        (viewAllList as ArrayList<ViewAll>).add(studio)
                         viewAllAdapter.notifyDataSetChanged()
 
                     }
-                }
 
-            if(type != null && type.equals("drum")){
+                }
+            }
+
+            if(type != null && type == "drum"){
                 db.collection("AllProducts").whereEqualTo("type","drum")
                     .get()
                     .addOnSuccessListener { result ->
                         for (document in result) {
-                            val viewr = document.toObject(ViewAll::class.java)
-                            (viewAllList as ArrayList<ViewAll>).add(viewr)
+                            val drum = document.toObject(ViewAll::class.java)
+                            (viewAllList as ArrayList<ViewAll>).add(drum)
                             viewAllAdapter.notifyDataSetChanged()
 
                         }
                     }
-        }
+                }
 
-            if(type != null && type.equals("traditional")){
+            if(type != null && type == "traditional"){
                 db.collection("AllProducts").whereEqualTo("type","traditional")
                     .get()
                     .addOnSuccessListener { result ->
                         for (document in result) {
-                            val viewr = document.toObject(ViewAll::class.java)
-                            (viewAllList as ArrayList<ViewAll>).add(viewr)
+                            val trad = document.toObject(ViewAll::class.java)
+                            (viewAllList as ArrayList<ViewAll>).add(trad)
                             viewAllAdapter.notifyDataSetChanged()
 
                         }
                     }
-            }
-            if(type != null && type.equals("wind")){
+                 }
+
+                 if(type != null && type == "wind"){
                 db.collection("AllProducts").whereEqualTo("type","wind")
                     .get()
                     .addOnSuccessListener { result ->
                         for (document in result) {
-                            val viewr = document.toObject(ViewAll::class.java)
-                            (viewAllList as ArrayList<ViewAll>).add(viewr)
+                            val wind = document.toObject(ViewAll::class.java)
+                            (viewAllList as ArrayList<ViewAll>).add(wind)
                             viewAllAdapter.notifyDataSetChanged()
 
                         }
                     }
-            }
-            if(type != null && type.equals("guitar")){
+                  }
+         if(type != null && type == "guitar"){
                 db.collection("AllProducts").whereEqualTo("type","guitar")
                     .get()
                     .addOnSuccessListener { result ->
                         for (document in result) {
-                            val viewr = document.toObject(ViewAll::class.java)
-                            (viewAllList as ArrayList<ViewAll>).add(viewr)
+                            val guitar = document.toObject(ViewAll::class.java)
+                            (viewAllList as ArrayList<ViewAll>).add(guitar)
                             viewAllAdapter.notifyDataSetChanged()
 
                         }
                     }
-            }
+                 }
+
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
-}
+
