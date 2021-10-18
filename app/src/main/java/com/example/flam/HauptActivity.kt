@@ -2,7 +2,9 @@ package com.example.flam
 
 
 import android.annotation.SuppressLint
+import android.app.SearchManager
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -14,6 +16,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -189,14 +192,46 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     //setting menu in action bar
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.my_menu,menu)
-        return super.onCreateOptionsMenu(menu)
+
+
+        val manager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        val searchItem = menu?.findItem(R.id.search)
+        val searchView = searchItem?.actionView as SearchView
+
+        searchView.setSearchableInfo(manager.getSearchableInfo(componentName))
+
+        searchView.setOnQueryTextListener(object :  SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                searchView.clearFocus()
+                searchView.setQuery("",false)
+                searchItem.collapseActionView()
+                    Toast.makeText(this@HauptActivity,"Looking for $query", Toast.LENGTH_SHORT).show()
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Toast.makeText(this@HauptActivity,"Looking for $newText", Toast.LENGTH_SHORT).show()
+               return false
+            }
+        })
+        return true
     }
+
     //Options Menu in action bar
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.themesnight -> {
 
             // User chose the "night themes" item
             Toast.makeText(this,"Enabled Themes Night",Toast.LENGTH_LONG).show()
+            true
+        }
+
+
+        R.id.sort -> {
+            val id = item.itemId
+            if(id == R.id.sort){
+                sortDialog()
+            }
             true
         }
 
@@ -235,6 +270,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             startActivity(Intent.createChooser(emailintent,"Send Report Bug Email..."))
             true
         }
+
 
         R.id.action_logout -> {
             // User chose the "Bye" item
@@ -275,6 +311,46 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         }
 
     }
+
+    private fun sortDialog() {
+        //options display on dialog
+        val options = arrayOf("Guitar","Drums","Studio","Traditional","Wind","Keys")
+        //init dialog
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle("Sort").setItems(options){dialogInterface, i ->
+            if(i==0){
+                //Ascending clicked
+                dialogInterface.dismiss()
+
+            }
+            if(i==1){
+                //Ascending clicked
+                dialogInterface.dismiss()
+            }
+            if(i==2){
+                //Ascending clicked
+                dialogInterface.dismiss()
+            }
+            if(i==3){
+                //Ascending clicked
+                dialogInterface.dismiss()
+            }
+            if(i==4){
+                //Ascending clicked
+                dialogInterface.dismiss()
+            }
+            if(i==5){
+                //Ascending clicked
+                dialogInterface.dismiss()
+            }
+            else if (i==5){
+                //Ascending clicked
+                dialogInterface.dismiss()
+            }
+
+        }
+    }
+
 
     private fun setUpTabbar() {
         binding.navbar.setOnItemSelectedListener {
