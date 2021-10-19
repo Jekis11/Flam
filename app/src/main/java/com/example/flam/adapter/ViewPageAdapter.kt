@@ -1,27 +1,43 @@
 package com.example.flam.adapter
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flam.R
 import com.example.flam.adapter.ViewPageAdapter.*
 
-class ViewPageAdapter(private var image: List<Int>): RecyclerView.Adapter<Pager2ViewHolder>() {
+class ViewPageAdapter(private var image: List<Int>): RecyclerView.Adapter<ViewPageAdapter.Pager2ViewHolder>() {
 
     inner class Pager2ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val itemImage: ImageView = itemView.findViewById(R.id.detail_img)
+
+        init {
+            itemImage.setOnClickListener{v: View ->
+                val position : Int = adapterPosition
+                Toast.makeText(itemView.context,"You clicked on item #${position+1}", Toast.LENGTH_SHORT).show()
+
+
+            }
+        }
+
+
     }
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Pager2ViewHolder {
-        TODO("Not yet implemented")
+       return Pager2ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.activity_details,parent,false))
     }
 
     override fun onBindViewHolder(holder: Pager2ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.itemImage.setImageResource(image[position])
+
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return image.size
     }
 }
