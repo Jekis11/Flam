@@ -52,7 +52,7 @@
         android:layout_height="30dp"
         android:src="@drawable/rate"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="11dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detail_img"/>
 
@@ -60,14 +60,28 @@
         android:id="@+id/detailrating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="14dp"
         android:textSize="20sp"
         android:text="5.0"
         android:layout_weight="1"
+        android:textColor="@color/Schwarz"
         android:fontFamily="@font/bold"
         app:layout_constraintEnd_toStartOf="@id/imagerate"
         app:layout_constraintTop_toBottomOf="@id/detail_img"
         />
+
+    <TextView
+        android:id="@+id/detaildescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textSize="20sp"
+        android:text="Description"
+        android:layout_weight="1"
+        android:textColor="#2979FF"
+        android:fontFamily="@font/bold"
+        app:layout_constraintTop_toBottomOf="@id/detail_price"
+        tools:ignore="MissingConstraints" />
 
 
 
