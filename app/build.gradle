@@ -112,7 +112,8 @@ dependencies {
     //14 Library Rate Us
     implementation  'com.github.YuganshT79:Smiley-Rating:1.0.2'
 
-    //15 Library SearchView
+    //15 Library Circle Indicator
+    implementation  'me.relex:circleindicator:2.1.4'
 
 }
 
