@@ -121,9 +121,50 @@ Remember the details Know what you ordered, when, and from where. Shop organizes
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        tools:ignore="MissingConstraints"
-
        />
 
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="30sp"
+        android:layout_marginLeft="4dp"
+        tools:ignore="MissingConstraints"
+        android:fontFamily="@font/black"
+        android:textColor="@color/Schwarz"
+        app:layout_constraintTop_toTopOf="@id/relativelayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/add_item"
+        />
+
+
+    <ImageView
+        android:id="@+id/delete_item"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:src="@drawable/ic_baseline_remove_circle_outline_24"
+        app:layout_constraintTop_toTopOf="@id/relativelayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/quantity"
+        tools:ignore="MissingConstraints"
+        />
+
+    <Button
+        android:id="@+id/buttonaddtocart"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonorange"
+        android:text="ADD TO CART"
+        android:textSize="18dp"
+        android:textColor="#fff"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/bold"
+        app:layout_constraintTop_toTopOf="@id/relativelayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 
 
