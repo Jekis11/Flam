@@ -191,28 +191,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     //setting menu in action bar
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.my_menu,menu)
-
-
-        val manager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
-        val searchItem = menu?.findItem(R.id.search)
-        val searchView = searchItem?.actionView as SearchView
-
-        searchView.setSearchableInfo(manager.getSearchableInfo(componentName))
-
-        searchView.setOnQueryTextListener(object :  SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                searchView.clearFocus()
-                searchView.setQuery("",false)
-                searchItem.collapseActionView()
-                    Toast.makeText(this@HauptActivity,"Looking for $query", Toast.LENGTH_SHORT).show()
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                Toast.makeText(this@HauptActivity,"Looking for $newText", Toast.LENGTH_SHORT).show()
-               return false
-            }
-        })
         return true
     }
 

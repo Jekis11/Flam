@@ -1,6 +1,9 @@
 package com.example.flam.models
 
-class ViewAll(
+import kotlinx.serialization.Serializable
+
+
+public class ViewAll  (
     var name: String? = null,
     var description: String?  = null,
     var rating: String?  = null,
