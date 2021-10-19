@@ -43,9 +43,35 @@
         app:layout_constraintTop_toBottomOf="@id/detail_img"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
-
-
         tools:ignore="MissingConstraints" />
+    
+    
+    <ImageView
+        android:id="@+id/imagerate"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:src="@drawable/rate"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_img"/>
+
+    <TextView
+        android:id="@+id/detailrating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
+        android:text="5.0"
+        android:layout_weight="1"
+        android:fontFamily="@font/bold"
+        app:layout_constraintEnd_toStartOf="@id/imagerate"
+        app:layout_constraintTop_toBottomOf="@id/detail_img"
+        />
+
+
+
+
 
 
 
