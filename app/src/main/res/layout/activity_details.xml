@@ -12,6 +12,7 @@
         android:id="@+id/detail_img"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:src="@drawable/drums"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,23 +85,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detail_price"
         tools:ignore="MissingConstraints" />
-    
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/din"
+        android:textAlignment="center"
         android:text="Shop automatically gathers and tracks your orders, so you don’t have to search, copy, or paste. You can also use Shop without auto-tracking.
 Deal with it faster Need to ask a question or make a return? With Shop, policies and retailers are one tap away.
 Remember the details Know what you ordered, when, and from where. Shop organizes all your previous orders and receipts."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detaildescription"
-        android:fontFamily="@font/din"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
 
-<RelativeLayout
+    <RelativeLayout
     android:id="@+id/relativelayout"
     android:layout_width="match_parent"
     android:layout_height="70dp"
