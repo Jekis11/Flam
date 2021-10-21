@@ -59,14 +59,14 @@ class DetailsActivity : AppCompatActivity() {
         addItem.setOnClickListener {
         if(totalquantity < 10){
             totalquantity++
-            quantity.setText(totalquantity.toString())
+            quantity.text = totalquantity.toString()
 
         }
         }
         removeItem.setOnClickListener {
             if(totalquantity > 1){
                 totalquantity--
-                quantity.setText(totalquantity.toString())
+                quantity.text = totalquantity.toString()
 
             }
 
