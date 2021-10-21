@@ -25,6 +25,9 @@ class DetailsActivity : AppCompatActivity() {
     private lateinit var removeItem : ImageView
     private lateinit var price : TextView
     private lateinit var rating : TextView
+    private lateinit var quantity : TextView
+    private var totalquantity: Int = 1
+    private var totalPrice: Int = 0
     private lateinit var description : TextView
     private lateinit var addtoCart : Button
     private  var viewAll : ViewAll? = null
@@ -44,6 +47,7 @@ class DetailsActivity : AppCompatActivity() {
             viewAll = `object`
         }
 
+        quantity = findViewById(R.id.quantity)
         imagedetails = findViewById(R.id.detail_img)
         addItem = findViewById(R.id.add_item)
         removeItem = findViewById(R.id.delete_item)
@@ -52,11 +56,30 @@ class DetailsActivity : AppCompatActivity() {
         rating = findViewById(R.id.detailrating)
         description = findViewById(R.id.descriptiondetail)
 
+        addItem.setOnClickListener {
+        if(totalquantity < 10){
+            totalquantity++
+            quantity.setText(totalquantity.toString())
+
+        }
+        }
+        removeItem.setOnClickListener {
+            if(totalquantity > 1){
+                totalquantity--
+                quantity.setText(totalquantity.toString())
+
+            }
+
+        }
+
+
         if(viewAll != null) {
             Glide.with(applicationContext).load(viewAll!!.img_url).into(detail_img)
             rating.setText(viewAll!!.rating)
             description.setText(viewAll!!.description)
             price.setText("Price :€" + viewAll!!.price)
+
+            totalPrice = viewAll!!.price!! * totalquantity
 
         }
 
