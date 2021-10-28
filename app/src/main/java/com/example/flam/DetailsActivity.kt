@@ -71,14 +71,14 @@ class DetailsActivity :  AppCompatActivity() {
         if(totalquantity < 10){
             totalquantity++
             quantity.text = totalquantity.toString()
-            totalPrice = viewAll!!.price!! * totalquantity
+
         }
         }
         removeItem.setOnClickListener {
             if(totalquantity > 1){
                 totalquantity--
                 quantity.text = totalquantity.toString()
-                totalPrice = viewAll!!.price!! * totalquantity
+
             }
 
         }
