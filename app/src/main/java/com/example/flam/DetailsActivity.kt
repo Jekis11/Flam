@@ -21,7 +21,7 @@ import kotlin.collections.HashMap
 
 
 class DetailsActivity :  AppCompatActivity() {
-    private lateinit var imagedetails : ImageView
+    private lateinit var detailimg : ImageView
     private lateinit var addItem : ImageView
     private lateinit var removeItem : ImageView
     private lateinit var price : TextView
@@ -51,7 +51,7 @@ class DetailsActivity :  AppCompatActivity() {
         }
 
         quantity = findViewById(R.id.quantity)
-        imagedetails = findViewById(R.id.detail_img)
+        detailimg = findViewById(R.id.detail_img)
         addItem = findViewById(R.id.add_item)
         removeItem = findViewById(R.id.delete_item)
         addtoCart = findViewById(R.id.buttonaddtocart)
@@ -81,7 +81,7 @@ class DetailsActivity :  AppCompatActivity() {
         }
 
         if(viewAll != null) {
-            Glide.with(applicationContext).load(viewAll!!.img_url).into(imagedetails)
+            Glide.with(applicationContext).load(viewAll!!.img_url).into(detailimg)
             rating.text = viewAll!!.rating
             description.text = viewAll!!.description
             price.text = "Price :€" + viewAll!!.price
