@@ -1,5 +1,6 @@
 package com.example.flam
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -9,14 +10,12 @@ import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.example.flam.adapter.ViewPageAdapter
 import com.example.flam.models.ViewAll
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_details.*
 import me.relex.circleindicator.CircleIndicator3
-
-
-
-
-
-
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class DetailsActivity : AppCompatActivity() {
@@ -30,8 +29,9 @@ class DetailsActivity : AppCompatActivity() {
     private var totalPrice: Int = 0
     private lateinit var description : TextView
     private lateinit var addtoCart : Button
-    private  var viewAll : ViewAll? = null
-
+    private lateinit var viewAll : ViewAll
+    private lateinit var firestore: FirebaseFirestore
+    private lateinit var firebaseAuth: FirebaseAuth
 
 
 
@@ -41,6 +41,9 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
+
+        firestore = FirebaseFirestore.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
 
         val `object`: Any? = intent.getSerializableExtra("detail")
         if (`object` is ViewAll) {
@@ -55,6 +58,11 @@ class DetailsActivity : AppCompatActivity() {
         price = findViewById(R.id.detail_price)
         rating = findViewById(R.id.detailrating)
         description = findViewById(R.id.descriptiondetail)
+
+        addtoCart.setOnClickListener {
+            addedtoCart()
+        }
+
 
         addItem.setOnClickListener {
         if(totalquantity < 10){
@@ -73,15 +81,12 @@ class DetailsActivity : AppCompatActivity() {
         }
 
 
-        if(viewAll != null) {
-            Glide.with(applicationContext).load(viewAll!!.img_url).into(detail_img)
-            rating.setText(viewAll!!.rating)
-            description.setText(viewAll!!.description)
-            price.setText("Price :€" + viewAll!!.price)
+        Glide.with(applicationContext).load(viewAll!!.img_url).into(detail_img)
+        rating.setText(viewAll!!.rating)
+        description.setText(viewAll!!.description)
+        price.setText("Price :€" + viewAll!!.price)
 
-            totalPrice = viewAll!!.price!! * totalquantity
-
-        }
+        totalPrice = viewAll!!.price!! * totalquantity
 
 
         postTolist()
@@ -99,6 +104,37 @@ class DetailsActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    private fun addedtoCart() {
+        var saveCurrentDate: String
+        var saveCurrentTime: String
+        val calForDate: Calendar = Calendar.getInstance()
+
+
+        val currentDate = SimpleDateFormat("MM dd, yyyy")
+        saveCurrentDate = currentDate.format(calForDate.time)
+
+        val currentTime = SimpleDateFormat("HH:mm:ss a")
+        saveCurrentTime = currentTime.format(calForDate.time)
+
+
+        val cartMap: HashMap<String, Any> = HashMap()
+
+        cartMap["productPrice"] = price.text.toString()
+        cartMap["currentDate"] = saveCurrentDate
+        cartMap["currentTime"] = saveCurrentTime
+        cartMap["totalQuantity"] = quantity.text.toString()
+        cartMap["totalPrice"] = totalPrice
+
+        firebaseAuth.currentUser?.let {
+            firestore.collection("AddtoCart").document(it.uid)
+                .collection("CurrentUser").add(cartMap).addOnCompleteListener {
+
+                }
+        }
+
     }
 
     private fun addToList(image: Int){

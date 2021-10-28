@@ -10,4 +10,6 @@ public class ViewAll  (
     var type: String?  = null,
     var img_url: String?  = null,
     var price: Int?  = null,
-)
+) {
+
+}
