@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
@@ -132,6 +133,7 @@ class DetailsActivity : AppCompatActivity() {
             firestore.collection("AddtoCart").document(it.uid)
                 .collection("CurrentUser").add(cartMap).addOnCompleteListener {
 
+                    Toast.makeText(this,"Added To A Cart", Toast.LENGTH_SHORT).show()
                 }
         }
 
