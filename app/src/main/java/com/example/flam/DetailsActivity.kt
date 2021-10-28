@@ -32,7 +32,7 @@ class DetailsActivity :  AppCompatActivity() {
     private var totalPrice: Int = 0
     private lateinit var addtoCart : Button
 
-    private lateinit var firebaseAuth : FirebaseAuth
+    private lateinit var auth : FirebaseAuth
     private lateinit var firestore : FirebaseFirestore
     private  var viewAll : ViewAll? = null
 
@@ -44,6 +44,9 @@ class DetailsActivity :  AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
+
+        auth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
 
         val `object`: Any? = intent.getSerializableExtra("detail")
         if (`object` is ViewAll) {
@@ -68,14 +71,14 @@ class DetailsActivity :  AppCompatActivity() {
         if(totalquantity < 10){
             totalquantity++
             quantity.text = totalquantity.toString()
-
+            totalPrice = viewAll!!.price!! * totalquantity
         }
         }
         removeItem.setOnClickListener {
             if(totalquantity > 1){
                 totalquantity--
                 quantity.text = totalquantity.toString()
-
+                totalPrice = viewAll!!.price!! * totalquantity
             }
 
         }
@@ -106,8 +109,8 @@ class DetailsActivity :  AppCompatActivity() {
     }
     @SuppressLint("SimpleDateFormat")
     private fun addetCart() {
-        var saveCurrentDate: String
-        var saveCurrentTime: String
+        val saveCurrentDate: String
+        val saveCurrentTime: String
         val calForDate: Calendar = Calendar.getInstance()
 
 
@@ -126,7 +129,7 @@ class DetailsActivity :  AppCompatActivity() {
         cartMap["totalQuantity"] = quantity.text.toString()
         cartMap["totalPrice"] = totalPrice
 
-        firebaseAuth.currentUser?.let {
+        auth.currentUser?.let {
             firestore.collection("AddtoCart").document(it.uid)
                 .collection("CurrentUser").add(cartMap).addOnCompleteListener {
 
