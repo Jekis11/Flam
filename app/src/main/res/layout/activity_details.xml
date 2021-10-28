@@ -8,7 +8,7 @@
     tools:context=".DetailsActivity">
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewpagerdetails"
+        android:id="@+id/viewpagerdetailss"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_above="@id/indicator"
@@ -30,7 +30,6 @@
         android:id="@+id/detail_img"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/drums"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
