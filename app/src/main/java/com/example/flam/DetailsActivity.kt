@@ -129,6 +129,7 @@ class DetailsActivity :  AppCompatActivity() {
         cartMap["totalQuantity"] = quantity.text.toString()
         cartMap["totalPrice"] = totalPrice
 
+
         auth.currentUser?.let {
             firestore.collection("AddtoCart").document(it.uid)
                 .collection("CurrentUser").add(cartMap).addOnCompleteListener {
@@ -137,8 +138,9 @@ class DetailsActivity :  AppCompatActivity() {
                     finish()
                 }
         }
+        }
 
-    }
+
 
 
     private fun addToList(image: Int){
