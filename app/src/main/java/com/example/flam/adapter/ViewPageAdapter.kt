@@ -17,7 +17,7 @@ class ViewPageAdapter(private var image: List<Int>): RecyclerView.Adapter<ViewPa
         init {
             itemImage.setOnClickListener{v: View ->
                 val position : Int = adapterPosition
-                Toast.makeText(itemView.context,"You clicked on item #${position+1}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(itemView.context,"You clicked on Photo#${position+1}", Toast.LENGTH_SHORT).show()
 
 
             }

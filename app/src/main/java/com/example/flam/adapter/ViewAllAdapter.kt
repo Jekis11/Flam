@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.flam.DetailsActivity
 import com.example.flam.R
-import com.example.flam.ViewAllActivity
-import com.example.flam.models.PopularModel
 import com.example.flam.models.ViewAll
 
 class ViewAllAdapter(

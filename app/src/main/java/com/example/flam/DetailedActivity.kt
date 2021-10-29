@@ -63,16 +63,16 @@ class DetailsActivity :  AppCompatActivity() {
         description = findViewById(R.id.descriptiondetail)
 
         addtoCart.setOnClickListener {
-                addetCart()
+            addetCart()
         }
 
 
         addItem.setOnClickListener {
-        if(totalquantity < 10){
-            totalquantity++
-            quantity.text = totalquantity.toString()
+            if(totalquantity < 10){
+                totalquantity++
+                quantity.text = totalquantity.toString()
 
-        }
+            }
         }
         removeItem.setOnClickListener {
             if(totalquantity > 1){
@@ -138,7 +138,7 @@ class DetailsActivity :  AppCompatActivity() {
                     finish()
                 }
         }
-        }
+    }
 
 
 
