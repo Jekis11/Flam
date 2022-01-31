@@ -10,7 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/new_products_Img"
@@ -45,6 +46,7 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Total Price: €300"
@@ -52,7 +54,25 @@
             android:textAlignment="center"
             android:background="@color/Blau"
             android:fontFamily="@font/bold"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="10dp"
+            />
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerview"
+            android:layout_marginRight="7dp"
+            android:layout_marginLeft="7dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview"
+
+            />
 
 
 
