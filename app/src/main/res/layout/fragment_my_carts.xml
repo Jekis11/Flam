@@ -8,6 +8,7 @@
     tools:context=".HauptModels.MyCartsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -36,6 +37,22 @@
             app:layout_constraintTop_toBottomOf="@id/new_products_Img"
             />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Price: €300"
+            android:textSize="28sp"
+            android:textAlignment="center"
+            android:background="@color/Blau"
+            android:fontFamily="@font/bold"
+            tools:ignore="MissingConstraints" />
 
 
 
