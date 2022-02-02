@@ -43,8 +43,10 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
         myCardAdapter = MyCardAdapter(activity,cartModelList)
         recyclerview.adapter(myCardAdapter)
 
-        db.collection("AddtoCart").document(auth.currentUser.uid)
-            .collection("CurrentUser").get()
+        auth.currentUser?.let {
+            db.collection("AddtoCart").document(it.uid)
+                .collection("CurrentUser").get()
+        }
 
 
 
