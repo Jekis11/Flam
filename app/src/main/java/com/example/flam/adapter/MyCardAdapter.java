@@ -37,7 +37,7 @@ public  class MyCardAdapter  extends RecyclerView.Adapter<MyCardAdapter.ViewHold
         holder.price.setText(cartModelsList.get(position).getProductPrice());
         holder.data.setText(cartModelsList.get(position).getCurrentDate());
         holder.quantity.setText(cartModelsList.get(position).getTotalQuantity());
-        holder.totalPrice.setText(cartModelsList.get(position).getTotalPrice());
+        holder.totalPrice.setText(String.valueOf(cartModelsList.get(position).getTotalPrice()));
     }
 
     @Override

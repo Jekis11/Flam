@@ -59,7 +59,7 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
                            for (document in task.result){
                                val cardModel: MyCartModels =
                                    document.toObject(MyCartModels::class.java)
-                               cardModeList.add(cardModel)
+                               (cartModelList as ArrayList<MyCartModels>).add(cardModel)
                                myCardAdapter.notifyDataSetChanged()
 
 
