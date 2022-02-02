@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,8 +13,11 @@ import com.example.flam.R
 import com.example.flam.adapter.MyCardAdapter
 import com.example.flam.databinding.FragmentPersonBinding
 import com.example.flam.models.MyCartModels
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.ktx.Firebase
 
 
@@ -36,7 +40,7 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
         auth = FirebaseAuth.getInstance()
 
         recyclerview = binding.root.findViewById(R.id.recyclerview)
-        recyclerview.layoutManager(LinearLayoutManager(activity))
+        recyclerview.layoutManager = LinearLayoutManager(activity)
 
 
         cartModelList = ArrayList()
@@ -45,7 +49,15 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
 
         auth.currentUser?.let {
             db.collection("AddtoCart").document(it.uid)
-                .collection("CurrentUser").get()
+                .collection("CurrentUser").get().addOnCompleteListener {
+
+
+
+                }
+
+
+
+
         }
 
 
