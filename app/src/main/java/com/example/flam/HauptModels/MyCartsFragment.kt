@@ -34,6 +34,7 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
         db = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
 
+        recyclerview = binding.root.findViewById(R.id.recyclerview)
 
 
         return binding.root
