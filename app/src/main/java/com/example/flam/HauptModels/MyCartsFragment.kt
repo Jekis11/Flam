@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flam.R
 import com.example.flam.adapter.MyCardAdapter
@@ -35,6 +36,16 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
         auth = FirebaseAuth.getInstance()
 
         recyclerview = binding.root.findViewById(R.id.recyclerview)
+        recyclerview.layoutManager(LinearLayoutManager(activity))
+
+
+        cartModelList = ArrayList()
+        myCardAdapter = MyCardAdapter(activity,cartModelList)
+        recyclerview.adapter(myCardAdapter)
+
+        db.collection("AddtoCart").document(auth.currentUser.uid)
+            .collection("CurrentUser").get()
+
 
 
         return binding.root
@@ -46,3 +57,5 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
     }
 
 }
+
+
