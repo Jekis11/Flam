@@ -6,11 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.example.flam.R
+import com.example.flam.adapter.MyCardAdapter
 import com.example.flam.databinding.FragmentPersonBinding
+import com.example.flam.models.MyCartModels
 
 
 class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
+
+
+
+    private lateinit var  recyclerview: RecyclerView
+    private lateinit var  myCardAdapter: MyCardAdapter
+    private lateinit var  cartModelList: List<MyCartModels>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

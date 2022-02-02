@@ -33,12 +33,16 @@ public  class MyCardAdapter  extends RecyclerView.Adapter<MyCardAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyCardAdapter.ViewHolder holder, int position) {
-
+        holder.name.setText(cartModelsList.get(position).getProductName());
+        holder.price.setText(cartModelsList.get(position).getProductPrice());
+        holder.data.setText(cartModelsList.get(position).getCurrentDate());
+        holder.quantity.setText(cartModelsList.get(position).getTotalQuantity());
+        holder.totalPrice.setText(cartModelsList.get(position).getTotalPrice());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return cartModelsList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
