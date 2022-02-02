@@ -11,11 +11,16 @@ import com.example.flam.R
 import com.example.flam.adapter.MyCardAdapter
 import com.example.flam.databinding.FragmentPersonBinding
 import com.example.flam.models.MyCartModels
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
 
 class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
 
 
+    private lateinit var  db: FirebaseFirestore
+    private lateinit var  auth: FirebaseAuth
 
     private lateinit var  recyclerview: RecyclerView
     private lateinit var  myCardAdapter: MyCardAdapter
@@ -25,6 +30,12 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentPersonBinding.inflate(layoutInflater)
+
+        db = FirebaseFirestore.getInstance()
+        auth = FirebaseAuth.getInstance()
+
+
+
         return binding.root
     }
 
