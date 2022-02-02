@@ -134,6 +134,7 @@ class DetailsActivity :  AppCompatActivity() {
             firestore.collection("AddtoCart").document(it.uid)
                 .collection("CurrentUser").add(cartMap).addOnCompleteListener {
 
+
                     Toast.makeText(applicationContext,"Added To A Cart", Toast.LENGTH_SHORT).show()
                     finish()
                 }

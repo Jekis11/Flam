@@ -19,6 +19,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.DocumentSnapshot
+
+
+
 
 
 class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
@@ -49,16 +53,28 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
 
         auth.currentUser?.let {
             db.collection("AddtoCart").document(it.uid)
-                .collection("CurrentUser").get().addOnCompleteListener {
+                .collection("CurrentUser").get().addOnCompleteListener {task ->
+
+                    if(task.isSuccessful()){
+                           for (document in task.result){
+                               val cardModel: MyCartModels =
+                                   document.toObject(MyCartModels::class.java)
+                               cardModeList.add(cardModel)
+                               myCardAdapter.notifyDataSetChanged()
+
+
+                           }
+
+
+                    }
+
+
+                        }
+
+                    }
 
 
 
-                }
-
-
-
-
-        }
 
 
 
