@@ -184,7 +184,7 @@
 
 
             <TextView
-                android:id="@+id/Total Quantity"
+                android:id="@+id/total_Quantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
