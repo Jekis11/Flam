@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.flam.R;
@@ -46,6 +47,7 @@ public  class MyCardAdapter  extends RecyclerView.Adapter<MyCardAdapter.ViewHold
         totalprice = totalprice + cartModelsList.get(position).getTotalPrice();
         Intent intent = new Intent("MyTotalAmount");
         intent.putExtra("totalAmount", totalprice);
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intent)
 
 
 

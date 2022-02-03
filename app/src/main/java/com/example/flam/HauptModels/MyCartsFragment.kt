@@ -1,6 +1,5 @@
 package com.example.flam.HauptModels
 
-import android.app.Dialog
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -10,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,16 +17,8 @@ import com.example.flam.R
 import com.example.flam.adapter.MyCardAdapter
 import com.example.flam.databinding.FragmentPersonBinding
 import com.example.flam.models.MyCartModels
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.firestore.DocumentSnapshot
-
-
-
 
 
 class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
@@ -98,6 +88,10 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
 
     inner class MyBroadcastReceiver : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent){
+
+            val totalBill = intent.getIntExtra("totalAmount", 0)
+            overTotalAmount.setText("Total Bill :"+totalBill+"€")
+
 
                 }
     }
