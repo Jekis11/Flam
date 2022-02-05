@@ -1,13 +1,20 @@
 package com.example.flam;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
 import com.example.flam.adapter.NavCategoryDetailedAdapter;
+import com.example.flam.models.HomeCategory;
 import com.example.flam.models.NavCategoryDetailedModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +34,33 @@ public class NavCategoryActivity extends AppCompatActivity {
 
 
         db = FirebaseFirestore.getInstance();
-
         recyclerView = findViewById(R.id.nav_cat_det_rec);
-        list = new ArrayList<>();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new NavCategoryDetailedAdapter(this,list);
+        recyclerView.setAdapter(adapter);
+
+
+        db.collection("NavCategoryDetailed")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()){
+                            for(QueryDocumentSnapshot document: task.getResult()){
+
+                                NavCategoryDetailedModel navCategoryDetailedmodel = document.toObject(NavCategoryDetailedModel.class);
+                                list.add(navCategoryDetailedmodel);
+                                adapter.notifyDataSetChanged();
+
+                            }
+
+                        }
+                    }
+                });
+
+
+
+
+
     }
 }
