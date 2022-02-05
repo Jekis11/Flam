@@ -48,9 +48,6 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
         activity?.let { LocalBroadcastManager.getInstance(it).registerReceiver(MyBroadcastReceiver(),IntentFilter("MyTotalAmount")) }
 
 
-
-
-
         cartModelList = ArrayList()
         myCardAdapter = MyCardAdapter(activity,cartModelList)
         recyclerview.adapter = myCardAdapter
@@ -76,10 +73,6 @@ class MyCartsFragment : Fragment(R.layout.fragment_my_carts) {
                         }
 
                     }
-
-
-
-
 
 
         return binding.root

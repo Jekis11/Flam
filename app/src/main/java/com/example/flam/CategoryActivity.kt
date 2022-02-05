@@ -24,10 +24,5 @@ class CategoryActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-        bk1.setOnClickListener {
-            val intent = Intent(this,NavCategoryActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

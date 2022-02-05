@@ -262,11 +262,10 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         R.id.action_cart -> {
             // User chose the "Сart" item
             // тут просто интент поменять на переход в корзину
-            val intent = Intent(this, MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
-            Toast.makeText(this,"Bis bald, danke!",Toast.LENGTH_LONG).show()
-            finish()
+            val myCartsFragment = MyCartsFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.framelayout, myCartsFragment).commit()
+            Toast.makeText(this,"Go to Carts",Toast.LENGTH_LONG).show()
             true
         }
         R.id.action_drei-> {
@@ -352,8 +351,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                     supportFragmentManager.beginTransaction()
                             .replace(R.id.framelayout, navpersont).addToBackStack(null).commit()
                     viewpager.currentItem = 2
-
-
+                finish()
                 }
 
                 R.id.nav_settings -> {
@@ -391,6 +389,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             val personFragment = PersonFragment()
             supportFragmentManager.beginTransaction()
                 .replace(R.id.framelayout, personFragment).commit()
+            finish()
         }
         if(item.itemId == R.id.nav_category){
            startActivity(Intent(this,CategoryActivity::class.java))
@@ -404,10 +403,11 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             finish()
         }
         if(item.itemId == R.id.nav_settings){
-            val settingsFragment = SettingsFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.framelayout, settingsFragment).commit()
-             }
+            val intent = Intent(this, SettingsFragment::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
+            Toast.makeText(this,"Go to My Carts!",Toast.LENGTH_LONG).show()
+            finish()}
 
         if(item.itemId == R.id.newproducts){
             val newproductsFragment = NewProductsFragment()
@@ -420,9 +420,11 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 .replace(R.id.framelayout, myordersFragment).commit()
         }
         if(item.itemId == R.id.mycarts){
-            val mycartsFragment = MyCartsFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.framelayout, mycartsFragment).commit()
+            val intent = Intent(this, MyCartsFragment::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
+            Toast.makeText(this,"Go to My Carts!",Toast.LENGTH_LONG).show()
+            finish()
         }
         if(item.itemId == R.id.rateus){
             startActivity(Intent(this,RateUs::class.java))
@@ -456,8 +458,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         return true
     }
-
-
 
 
 }
