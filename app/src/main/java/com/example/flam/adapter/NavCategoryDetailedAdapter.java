@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.flam.R;
 import com.example.flam.models.NavCategoryDetailedModel;
 
@@ -34,6 +35,7 @@ public class NavCategoryDetailedAdapter extends RecyclerView.Adapter<NavCategory
     @Override
     public void onBindViewHolder(@NonNull NavCategoryDetailedAdapter.ViewHolder holder, int position) {
 
+        Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageview);
     }
 
     @Override
