@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.flam.adapter.NavCategoryDetailedAdapter;
 import com.example.flam.models.HomeCategory;
@@ -52,8 +53,8 @@ public class NavCategoryActivity extends AppCompatActivity {
                                 list.add(navCategoryDetailedmodel);
                                 adapter.notifyDataSetChanged();
 
-                            }
-
+                            } } else{
+                            Toast.makeText(NavCategoryActivity.this, "Error," +task.getException(), Toast.LENGTH_SHORT);
                         }
                     }
                 });
