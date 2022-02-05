@@ -36,6 +36,8 @@ public class NavCategoryDetailedAdapter extends RecyclerView.Adapter<NavCategory
     public void onBindViewHolder(@NonNull NavCategoryDetailedAdapter.ViewHolder holder, int position) {
 
         Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageview);
+        holder.name.setText(list.get(position).getName());
+        holder.price.setText(list.get(position).getPrice());
     }
 
     @Override
