@@ -415,10 +415,11 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 .replace(R.id.framelayout, newproductsFragment).commit()
         }
         if(item.itemId == R.id.myorders){
-            val myordersFragment = MyOrdersFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.framelayout, myordersFragment).commit()
-        }
+            val intent = Intent(this, MyOrdersFragment::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
+            Toast.makeText(this,"Go to My Orders!",Toast.LENGTH_LONG).show()
+            finish()}
         if(item.itemId == R.id.mycarts){
             val intent = Intent(this, MyCartsFragment::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
