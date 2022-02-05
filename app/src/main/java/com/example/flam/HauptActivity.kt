@@ -385,9 +385,9 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             }
 
             R.id.newproducts -> {
-                val navpersont = NewProductsFragment()
+                val newproducts = NewProductsFragment()
                 supportFragmentManager.beginTransaction()
-                    .add(R.id.framelayout, navpersont).addToBackStack(null).commit()
+                    .add(R.id.framelayout, newproducts).addToBackStack(null).commit()
                 Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
             }
 
