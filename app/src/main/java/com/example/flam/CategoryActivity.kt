@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_details.*
 
 class CategoryActivity : AppCompatActivity() {
 
-    private lateinit var bk1: RelativeLayout
+
 
 
 
@@ -21,6 +21,11 @@ class CategoryActivity : AppCompatActivity() {
 
         backpressed.setOnClickListener {
             val intent = Intent(this,HauptActivity::class.java)
+            startActivity(intent)
+        }
+
+        drums1.setOnClickListener {
+            val intent = Intent(this,NavCategoryActivity::class.java)
             startActivity(intent)
         }
 

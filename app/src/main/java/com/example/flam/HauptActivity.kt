@@ -195,7 +195,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     }
 
     //Options Menu in action bar
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
         R.id.themesnight -> {
 
             // User chose the "night themes" item
@@ -217,6 +217,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             supportFragmentManager.beginTransaction()
                 .replace(R.id.framelayout, personFragment).commit()
             true
+
         }
 
 
@@ -268,12 +269,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             Toast.makeText(this,"Go to Carts",Toast.LENGTH_LONG).show()
             true
         }
-        R.id.action_drei-> {
-            val settingsFragment = com.example.flam.HauptModels.SettingsFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(com.example.flam.R.id.framelayout, settingsFragment).commit()
-            true
-        }
+
 
         R.id.home -> {
             startActivity(Intent(this,HauptActivity::class.java))
@@ -351,20 +347,9 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                     supportFragmentManager.beginTransaction()
                             .replace(R.id.framelayout, navpersont).addToBackStack(null).commit()
                     viewpager.currentItem = 2
-                finish()
                 }
 
-                R.id.nav_settings -> {
-                    val settingsFragment = SettingsFragment()
-                    supportFragmentManager.beginTransaction()
-                            .replace(R.id.framelayout, settingsFragment).addToBackStack(null).commit()
-                    viewpager.currentItem = 3
-                    binding.navbar.showBadge(R.id.nav_settings, 10000)
 
-
-
-
-                }
             }
         }
 
@@ -382,50 +367,57 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         drawerlayout.closeDrawer(GravityCompat.START)
+        when (item.itemId) {
+            R.id.nav_prifle -> {
+                val navpersont = PersonFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.framelayout, navpersont).addToBackStack(null).commit()
+                viewpager.currentItem = 2
+                Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.nav_category ->{
+                val intent = Intent(this, CategoryActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                startActivity(intent)
+                Toast.makeText(this,"Go to Gategory!",Toast.LENGTH_LONG).show()
+
+            }
+
+            R.id.newproducts -> {
+                val navpersont = NewProductsFragment()
+                supportFragmentManager.beginTransaction()
+                    .add(R.id.framelayout, navpersont).addToBackStack(null).commit()
+                Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.mycarts -> {
+                val mycarts = MyCartsFragment()
+                supportFragmentManager.beginTransaction()
+                    .add(R.id.framelayout, mycarts).addToBackStack(null).commit()
+                Toast.makeText(this, "Go to My Carts", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+
+
+
+
+
         if(item.itemId == R.id.nav_homes){
             Toast.makeText(applicationContext,"HOME SCHEISSE", Toast.LENGTH_SHORT).show()
         }
-        if(item.itemId == R.id.nav_prifle){
-            val personFragment = PersonFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.framelayout, personFragment).commit()
-            finish()
-        }
-        if(item.itemId == R.id.nav_category){
-           startActivity(Intent(this,CategoryActivity::class.java))
-        }
+
+
+
+
 
         if(item.itemId == R.id.nav_logout){
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
             Toast.makeText(this,"Bis bald, danke!",Toast.LENGTH_LONG).show()
-            finish()
-        }
-        if(item.itemId == R.id.nav_settings){
-            val intent = Intent(this, SettingsFragment::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
-            Toast.makeText(this,"Go to My Carts!",Toast.LENGTH_LONG).show()
-            finish()}
 
-        if(item.itemId == R.id.newproducts){
-            val newproductsFragment = NewProductsFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.framelayout, newproductsFragment).commit()
-        }
-        if(item.itemId == R.id.myorders){
-            val intent = Intent(this, MyOrdersFragment::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
-            Toast.makeText(this,"Go to My Orders!",Toast.LENGTH_LONG).show()
-            finish()}
-        if(item.itemId == R.id.mycarts){
-            val intent = Intent(this, MyCartsFragment::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
-            Toast.makeText(this,"Go to My Carts!",Toast.LENGTH_LONG).show()
-            finish()
         }
         if(item.itemId == R.id.rateus){
             startActivity(Intent(this,RateUs::class.java))
@@ -442,7 +434,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
             startActivity(shareIntent)
         }
-
         if(item.itemId == R.id. getlink){
             val view = View.inflate(this@HauptActivity, R.layout.customdialoggetlink,null)
                 val builder = AlertDialog.Builder(this@HauptActivity)
@@ -455,6 +446,8 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             }
 
         }
+
+
 
 
         return true
