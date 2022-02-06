@@ -217,9 +217,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             supportFragmentManager.beginTransaction()
                 .replace(R.id.framelayout, personFragment).commit()
             true
-
         }
-
 
         R.id.contactus -> {
             val contactFragment = ContactFragment()
@@ -378,32 +376,11 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 startActivity(intent)
                 Toast.makeText(this,"Go to Gategory!",Toast.LENGTH_LONG).show()
-
             }
-
-            R.id.newproducts ->{
-                val productsFragment = NewProductsFragment()
-                supportFragmentManager.beginTransaction().replace(R.id.framelayout,productsFragment).commit()
-                return@onNavigationItemSelected true
-            }
-
-
-
-
         }
-
-
-
-
-
         if(item.itemId == R.id.nav_homes){
             Toast.makeText(applicationContext,"HOME SCHEISSE", Toast.LENGTH_SHORT).show()
         }
-
-
-
-
-
         if(item.itemId == R.id.nav_logout){
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -438,14 +415,11 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             }
 
         }
-
-
-
-
         return true
     }
 
+    }
 
-}
+
 
 
