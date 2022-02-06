@@ -21,6 +21,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import bolts.Bolts
 import com.firebase.ui.auth.AuthUI
+import com.firebase.ui.auth.BuildConfig
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser

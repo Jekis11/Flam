@@ -383,11 +383,19 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 startActivity(intent)
                 Toast.makeText(this,"Go to Orders!",Toast.LENGTH_LONG).show()
                 true
+                finish()
             }
             R.id.newproducts ->{
                 val intent = Intent(this,NewProductsActivity::class.java)
                 startActivity(intent)
                 Toast.makeText(this,"Go to NewProduct!",Toast.LENGTH_LONG).show()
+                true
+                finish()
+            }
+            R.id.mycarts ->{
+                val intent = Intent(this,CartActivity::class.java)
+                startActivity(intent)
+                Toast.makeText(this,"Go to My Carts!",Toast.LENGTH_LONG).show()
                 true
             }
 

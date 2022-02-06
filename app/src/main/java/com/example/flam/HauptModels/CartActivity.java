@@ -4,10 +4,16 @@ import static android.app.PendingIntent.getActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.flam.R;
 import com.example.flam.adapter.MyCardAdapter;
@@ -24,6 +30,7 @@ import java.util.List;
 
 public class CartActivity extends AppCompatActivity {
 
+    TextView overtotalAmount;
 
     FirebaseFirestore db;
     FirebaseAuth auth;
@@ -39,10 +46,16 @@ public class CartActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         recyclerView = findViewById(R.id.recyclerview);
+        overtotalAmount = findViewById(R.id.textview2);
+
+        BroadcastReceiver mMessageReceiver = null;
+        LocalBroadcastManager.getInstance(getApplicationContext())
+                .registerReceiver(mMessageReceiver, new IntentFilter("MyTotalAmount"));
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         cartModelsList = new ArrayList<>();
-        cardAdapter = new MyCardAdapter(this,cartModelsList);
+        cardAdapter = new MyCardAdapter(this, cartModelsList);
         recyclerView.setAdapter(cardAdapter);
 
         db.collection("AddToCart").document(auth.getCurrentUser().getUid())
@@ -50,8 +63,8 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                if(task.isSuccessful()){
-                    for (DocumentSnapshot documentShapshot : task.getResult().getDocuments()){
+                if (task.isSuccessful()) {
+                    for (DocumentSnapshot documentShapshot : task.getResult().getDocuments()) {
                         MyCartModels cartModels = documentShapshot.toObject(MyCartModels.class);
                         cartModelsList.add(cartModels);
                         cardAdapter.notifyDataSetChanged();
@@ -60,7 +73,15 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
+        mMessageReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
 
+                int totalBill = intent.getIntExtra("totalAmount", 0);
+                overtotalAmount.setText("Total Bill:" + totalBill + "€");
+
+            }
+        };
 
 
     }

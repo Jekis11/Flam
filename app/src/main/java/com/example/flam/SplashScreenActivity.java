@@ -34,13 +34,11 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void run() {
                 relativeLayout.setVisibility(View.VISIBLE);
                 relativeLayout.setAnimation(layoutAnimation);
-
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                          txtFlam.setVisibility(View.VISIBLE);
                          txtFlam2.setVisibility(View.VISIBLE);
-
 
                          txtFlam.setAnimation(txtAnimation);
                          txtFlam2.setAnimation(txtAnimation);
