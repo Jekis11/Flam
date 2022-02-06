@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.flam.R;
+
 public class MyOrdersActivity extends AppCompatActivity {
 
     @Override
