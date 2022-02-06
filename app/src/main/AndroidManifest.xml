@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flam">
         <activity
+            android:name=".HauptModels.NewProductsActivity"
+            android:exported="false" />
+        <activity
             android:name=".HauptModels.MyOrdersActivity"
             android:exported="false" />
         <activity
