@@ -260,15 +260,6 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             true
         }
 
-        R.id.action_cart -> {
-            // User chose the "Сart" item
-            // тут просто интент поменять на переход в корзину
-            val myCartsFragment = MyCartsFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.framelayout, myCartsFragment).commit()
-            Toast.makeText(this,"Go to Carts",Toast.LENGTH_LONG).show()
-            true
-        }
 
 
         R.id.home -> {
@@ -349,6 +340,10 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                     viewpager.currentItem = 2
                 }
 
+                R.id.settengs -> {
+
+                }
+
 
             }
         }
@@ -364,6 +359,8 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         }
 
     }
+
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         drawerlayout.closeDrawer(GravityCompat.START)
@@ -384,19 +381,14 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
             }
 
-            R.id.newproducts -> {
-                val newproducts = NewProductsFragment()
-                supportFragmentManager.beginTransaction()
-                    .add(R.id.framelayout, newproducts).addToBackStack(null).commit()
-                Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
+            R.id.newproducts ->{
+                val productsFragment = NewProductsFragment()
+                supportFragmentManager.beginTransaction().replace(R.id.framelayout,productsFragment).commit()
+                return@onNavigationItemSelected true
             }
 
-            R.id.mycarts -> {
-                val mycarts = MyCartsFragment()
-                supportFragmentManager.beginTransaction()
-                    .add(R.id.framelayout, mycarts).addToBackStack(null).commit()
-                Toast.makeText(this, "Go to My Carts", Toast.LENGTH_SHORT).show()
-            }
+
+
 
         }
 
