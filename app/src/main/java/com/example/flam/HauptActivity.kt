@@ -384,6 +384,15 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 startActivity(intent)
                 Toast.makeText(this,"Go to Orders!",Toast.LENGTH_LONG).show()
             }
+            R.id.newproducts ->{
+                val intent = Intent(this,NewProductsActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                startActivity(intent)
+                Toast.makeText(this,"Go to NewProduct!",Toast.LENGTH_LONG).show()
+            }
+
+
+
         }
         if(item.itemId == R.id.nav_homes){
             Toast.makeText(applicationContext,"HOME SCHEISSE", Toast.LENGTH_SHORT).show()
