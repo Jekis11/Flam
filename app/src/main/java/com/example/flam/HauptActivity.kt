@@ -397,6 +397,7 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 startActivity(intent)
                 Toast.makeText(this,"Go to My Carts!",Toast.LENGTH_LONG).show()
                 true
+                finish()
             }
 
 
