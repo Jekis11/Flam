@@ -380,15 +380,15 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
             R.id.myorders ->{
                 val intent = Intent(this,MyOrdersActivity::class.java)
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 startActivity(intent)
                 Toast.makeText(this,"Go to Orders!",Toast.LENGTH_LONG).show()
+                true
             }
             R.id.newproducts ->{
                 val intent = Intent(this,NewProductsActivity::class.java)
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 startActivity(intent)
                 Toast.makeText(this,"Go to NewProduct!",Toast.LENGTH_LONG).show()
+                true
             }
 
 
