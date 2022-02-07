@@ -61,20 +61,20 @@
             />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/recyclerview"
-            android:layout_marginRight="7dp"
             android:layout_marginLeft="7dp"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintHorizontal_bias="0.461"
-            app:layout_constraintVertical_bias="0"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="412dp"
             app:layout_constraintBottom_toTopOf="@+id/buy_now"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview2"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/buy_now"
