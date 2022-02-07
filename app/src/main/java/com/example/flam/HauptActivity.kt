@@ -339,6 +339,10 @@ class HauptActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 }
 
                 R.id.settengs -> {
+                    val settings = SettingsFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.framelayout, settings).addToBackStack(null).commit()
+                    viewpager.currentItem = 3
 
                 }
 
