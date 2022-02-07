@@ -40,24 +40,23 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="Notifications"
+    <PreferenceCategory
+        android:layout_height="wrap_content"
 
-        app:icon="@drawable/ic_baseline_notifications_24987">
+        app:icon="@drawable/ic_baseline_notifications_24987"
+        app:title="Notifications">
 
         <SeekBarPreference
+            android:defaultValue="50"
             android:key="volume_notifications"
-            app:title="Volume"
             app:showSeekBarValue="true"
-            android:defaultValue="50"/>
+            app:title="Volume" />
 
         <SwitchPreferenceCompat
             android:key="notifications"
-            app:title="Disable Notifications"
+            android:summaryOff="You will receive all notifications"
             android:summaryOn="You will no longer receive notifications"
-            android:summaryOff="You will receive all notifications"/>
-
-
-
+            app:title="Disable Notifications" />
 
 
     </PreferenceCategory>
