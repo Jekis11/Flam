@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -73,6 +74,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore-ktx:23.0.4'
     implementation 'androidx.databinding:databinding-runtime:7.0.2'
     implementation 'androidx.preference:preference:1.1.1'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
 
     testImplementation 'junit:junit:4.13.2'
@@ -80,6 +83,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
 
+    // Add the Crashlytics Gradle plugin
 
     //1 Animation
     implementation 'com.airbnb.android:lottie:3.4.4'
@@ -133,6 +137,7 @@ dependencies {
     def nav_version = "2.3.0"
     implementation "androidx.navigation:navigation-fragment-ktx:$kotlin_version"
     implementation "androidx.navigation-ui-ktx:$nav_version"
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
 
 }
 
