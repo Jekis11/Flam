@@ -1,0 +1,8 @@
+# Flam![HOME FRAGMENT](https://user-images.githubusercontent.com/65465144/175069122-da728a40-e856-4844-9095-0d3857b1028a.png)
+![Cплэш скрин](https://user-images.githubusercontent.com/65465144/175069144-ae2c00e9-ba20-4541-86d6-fec812791edf.png)
+![ContactFragment](https://user-images.githubusercontent.com/65465144/175069159-eacbd79a-93cf-43ce-b472-c9628eee1d20.png)
+![Снимок экрана (657)](https://user-images.githubusercontent.com/65465144/175069176-b1922284-1908-45e2-9ca1-a98d57c3bb4e.png)
+![ИКОНКА В ТЕЛЕФОНЕ](https://user-images.githubusercontent.com/65465144/175069188-cb0d2032-65a2-430c-9edd-dfc18088deca.png)
+![Логин](https://user-images.githubusercontent.com/65465144/175069222-e7d9a919-eb0c-4a98-a21d-cb4d1447f781.png)
+![CATEGORIES1](https://user-images.githubusercontent.com/65465144/175069282-5047fd91-8d45-4bb9-b272-dd15091cfc09.png)
+![NavigationDrawer](https://user-images.githubusercontent.com/65465144/175069303-3783fc39-5e9b-426f-8759-329827a50c35.png)
